@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface ViewController : UIViewController
-//initial
+
+- (IBAction)authButtonAction:(id)sender;
+
 @end
