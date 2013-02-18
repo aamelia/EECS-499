@@ -7,9 +7,9 @@
 //
 
 #import "ListOfListsViewController.h"
+#import "ListOfListsCell.h"
 
 @interface ListOfListsViewController ()
-
 @end
 
 @implementation ListOfListsViewController
@@ -26,12 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _ownerNames = @[@"Gabi",
+                    @"Katie B",
+                    @"Laura"];
+    _listNames = @[@"Food Items",
+                   @"Household Items",
+                   @"To Do List"];
+    _listImages = @[@"Food.jpg",
+                    @"Household.jpg",
+                    @"ToDoList.jpg"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,25 +48,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _listNames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ListOfListsCell";
+    ListOfListsCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
-    // Configure the cell...
+    //Configure the cell
     
+    int row = [indexPath row];
+    cell.OwnerLabel.text = _ownerNames[row];
+    cell.ListNameLabel.text = _listNames[row];
+    cell.ListImage.image = [UIImage imageNamed: _listImages[row]];
+
     return cell;
 }
 
