@@ -29,6 +29,9 @@
 		A59A6A1316D1E46A00A03473 /* ToDoList.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A59A6A1016D1E46A00A03473 /* ToDoList.jpg */; };
 		A59A6A1416D1E46A00A03473 /* Household.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A59A6A1116D1E46A00A03473 /* Household.jpg */; };
 		A59A6A1516D1E46A00A03473 /* Food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A59A6A1216D1E46A00A03473 /* Food.jpg */; };
+		A59A6A2216D2A02E00A03473 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A2116D2A02E00A03473 /* ListDetailViewController.m */; };
+		A59A6A2F16D2A06900A03473 /* ListDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A2E16D2A06900A03473 /* ListDetailCell.m */; };
+		A59A6A3216D2A23100A03473 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A3116D2A23100A03473 /* ItemDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -372,6 +375,12 @@
 		A59A6A1016D1E46A00A03473 /* ToDoList.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ToDoList.jpg; path = ../ToDoList.jpg; sourceTree = "<group>"; };
 		A59A6A1116D1E46A00A03473 /* Household.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Household.jpg; path = ../Household.jpg; sourceTree = "<group>"; };
 		A59A6A1216D1E46A00A03473 /* Food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Food.jpg; path = ../Food.jpg; sourceTree = "<group>"; };
+		A59A6A2016D2A02E00A03473 /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
+		A59A6A2116D2A02E00A03473 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
+		A59A6A2D16D2A06900A03473 /* ListDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailCell.h; sourceTree = "<group>"; };
+		A59A6A2E16D2A06900A03473 /* ListDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailCell.m; sourceTree = "<group>"; };
+		A59A6A3016D2A23100A03473 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		A59A6A3116D2A23100A03473 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -907,6 +916,8 @@
 			children = (
 				A59A6A0A16D1BBBF00A03473 /* ListOfListsViewController.h */,
 				A59A6A0B16D1BBBF00A03473 /* ListOfListsViewController.m */,
+				A59A6A2016D2A02E00A03473 /* ListDetailViewController.h */,
+				A59A6A2116D2A02E00A03473 /* ListDetailViewController.m */,
 				A59A6A0D16D1BBFA00A03473 /* ListOfListsCell.h */,
 				A59A6A0E16D1BBFA00A03473 /* ListOfListsCell.m */,
 				A55D381A16C0510B00964794 /* FacebookSDK */,
@@ -945,6 +956,10 @@
 				A5958ED616BDFE020090665C /* AppDelegate.h */,
 				A5958ED716BDFE020090665C /* AppDelegate.m */,
 				A5958EDF16BDFE030090665C /* MainStoryboard.storyboard */,
+				A59A6A3016D2A23100A03473 /* ItemDetailViewController.h */,
+				A59A6A3116D2A23100A03473 /* ItemDetailViewController.m */,
+				A59A6A2D16D2A06900A03473 /* ListDetailCell.h */,
+				A59A6A2E16D2A06900A03473 /* ListDetailCell.m */,
 				A5958ECE16BDFE020090665C /* Supporting Files */,
 			);
 			path = "Shopping List";
@@ -1219,6 +1234,9 @@
 				A5958ED816BDFE020090665C /* AppDelegate.m in Sources */,
 				A59A6A0C16D1BBBF00A03473 /* ListOfListsViewController.m in Sources */,
 				A59A6A0F16D1BBFA00A03473 /* ListOfListsCell.m in Sources */,
+				A59A6A2216D2A02E00A03473 /* ListDetailViewController.m in Sources */,
+				A59A6A2F16D2A06900A03473 /* ListDetailCell.m in Sources */,
+				A59A6A3216D2A23100A03473 /* ItemDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
