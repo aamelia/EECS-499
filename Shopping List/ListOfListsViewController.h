@@ -10,5 +10,8 @@
 #import "AppDelegate.h"
 
 @interface ListOfListsViewController : UITableViewController
+{
+    NSMutableArray *listOfLists;
+}
 
 @end

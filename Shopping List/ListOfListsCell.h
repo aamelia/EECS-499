@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ListOfListsCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *ListImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *ListNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *OwnerLabel;
 @end
