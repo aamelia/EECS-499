@@ -58,7 +58,7 @@
                                     <outlet property="ListImage" destination="UjQ-Vp-u2J" id="h8G-wD-x9G"/>
                                     <outlet property="ListNameLabel" destination="7op-QH-u3N" id="ehq-f2-EZe"/>
                                     <outlet property="OwnerLabel" destination="Djg-cq-NNm" id="ujS-06-ReI"/>
-                                    <segue destination="2kQ-8X-Bdc" kind="push" identifier="ShowListDetails" id="o4c-iU-kxU"/>
+                                    <segue destination="7yO-DL-Kwh" kind="push" id="TuI-0f-oLz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,68 +73,20 @@
             </objects>
             <point key="canvasLocation" x="598" y="1"/>
         </scene>
-        <!--List Detail View Controller - List Details-->
-        <scene sceneID="NbQ-vh-rB8">
-            <objects>
-                <tableViewController id="2kQ-8X-Bdc" customClass="ListDetailViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GYa-pv-faA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ctK-6a-kdw" customClass="ListDetailCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3M6-sJ-5SW">
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="260" id="0v8-wX-Vpe"/>
-                                                <constraint firstAttribute="height" constant="21" id="did-YF-Fl7"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="3M6-sJ-5SW" firstAttribute="leading" secondItem="ctK-6a-kdw" secondAttribute="leading" constant="20" type="default" id="7W9-we-OsB"/>
-                                    <constraint firstItem="3M6-sJ-5SW" firstAttribute="top" secondItem="ctK-6a-kdw" secondAttribute="top" constant="11" id="R5A-XO-qUT"/>
-                                </constraints>
-                                <connections>
-                                    <segue destination="7yO-DL-Kwh" kind="push" id="8Au-9V-jfU"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="2kQ-8X-Bdc" id="QPX-wZ-afI"/>
-                            <outlet property="delegate" destination="2kQ-8X-Bdc" id="mf9-3h-oqs"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="List Details" id="KDR-iI-1IM"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="617-0H-PHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1035" y="1"/>
-        </scene>
-        <!--Item Detail View Controller - Item Details-->
+        <!--Navigation Controller - List Details-->
         <scene sceneID="ccz-nH-skl">
             <objects>
-                <viewController id="7yO-DL-Kwh" customClass="ItemDetailViewController" sceneMemberID="viewController">
+                <viewController id="7yO-DL-Kwh" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1cY-fc-y0u">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Item Details" id="WH7-yK-aKk"/>
+                    <navigationItem key="navigationItem" title="List Details" id="WH7-yK-aKk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HkY-im-g4c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1505" y="1"/>
+            <point key="canvasLocation" x="974" y="1"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="l3e-se-fpW">
@@ -155,31 +107,6 @@
             <point key="canvasLocation" x="72" y="1"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ItemDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemDetailViewController.h"/>
-        </class>
-        <class className="ListDetailCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListDetailCell.h"/>
-        </class>
-        <class className="ListDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListDetailViewController.h"/>
-        </class>
-        <class className="ListOfListsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListOfListsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="ListImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="ListNameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="OwnerLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="ListOfListsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListOfListsViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

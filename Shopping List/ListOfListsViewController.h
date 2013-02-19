@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface ListOfListsViewController : UITableViewController
-
-@property (nonatomic, strong) NSArray *listImages;
-@property (nonatomic, strong) NSArray *listNames;
-@property (nonatomic, strong) NSArray *ownerNames;
 
 @end

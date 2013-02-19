@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import <FacebookSDK.framework/FacebookSDK.h>
-//#import "FacebookSDK.framework/Versions/A/Headers/FacebookSDK.h"
+#import "ShoppingList.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSMutableArray *myLists;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) NSMutableArray *myLists;
 
 @end

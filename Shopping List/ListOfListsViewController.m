@@ -8,6 +8,7 @@
 
 #import "ListOfListsViewController.h"
 #import "ListOfListsCell.h"
+#import "AppDelegate.h"
 
 @interface ListOfListsViewController ()
 @end
@@ -17,7 +18,8 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -26,16 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _ownerNames = @[@"Gabi",
-                    @"Katie B",
-                    @"Laura"];
-    _listNames = @[@"Food Items",
-                   @"Household Items",
-                   @"To Do List"];
-    _listImages = @[@"Food.jpg",
-                    @"Household.jpg",
-                    @"ToDoList.jpg"];
-    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSMutableArray *myLists = [appDelegate.myLists objectAtIndex:1];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +49,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return _listNames.count;
+    return myLists.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -66,9 +60,8 @@
     //Configure the cell
     
     int row = [indexPath row];
-    cell.OwnerLabel.text = _ownerNames[row];
-    cell.ListNameLabel.text = _listNames[row];
-    cell.ListImage.image = [UIImage imageNamed: _listImages[row]];
+    cell.OwnerLabel.text = @"Owner: listNames[row]";
+    cell.ListNameLabel.text = @"Name: obj.listNames[row]";
 
     return cell;
 }

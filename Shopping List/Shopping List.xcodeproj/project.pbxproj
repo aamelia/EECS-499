@@ -31,7 +31,7 @@
 		A59A6A1516D1E46A00A03473 /* Food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A59A6A1216D1E46A00A03473 /* Food.jpg */; };
 		A59A6A2216D2A02E00A03473 /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A2116D2A02E00A03473 /* ListDetailViewController.m */; };
 		A59A6A2F16D2A06900A03473 /* ListDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A2E16D2A06900A03473 /* ListDetailCell.m */; };
-		A59A6A3216D2A23100A03473 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A3116D2A23100A03473 /* ItemDetailViewController.m */; };
+		A59A6A4C16D3231900A03473 /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A4B16D3231900A03473 /* ShoppingList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -379,8 +379,8 @@
 		A59A6A2116D2A02E00A03473 /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
 		A59A6A2D16D2A06900A03473 /* ListDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailCell.h; sourceTree = "<group>"; };
 		A59A6A2E16D2A06900A03473 /* ListDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailCell.m; sourceTree = "<group>"; };
-		A59A6A3016D2A23100A03473 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
-		A59A6A3116D2A23100A03473 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		A59A6A4A16D3231900A03473 /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
+		A59A6A4B16D3231900A03473 /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -956,8 +956,8 @@
 				A5958ED616BDFE020090665C /* AppDelegate.h */,
 				A5958ED716BDFE020090665C /* AppDelegate.m */,
 				A5958EDF16BDFE030090665C /* MainStoryboard.storyboard */,
-				A59A6A3016D2A23100A03473 /* ItemDetailViewController.h */,
-				A59A6A3116D2A23100A03473 /* ItemDetailViewController.m */,
+				A59A6A4A16D3231900A03473 /* ShoppingList.h */,
+				A59A6A4B16D3231900A03473 /* ShoppingList.m */,
 				A59A6A2D16D2A06900A03473 /* ListDetailCell.h */,
 				A59A6A2E16D2A06900A03473 /* ListDetailCell.m */,
 				A5958ECE16BDFE020090665C /* Supporting Files */,
@@ -1236,7 +1236,7 @@
 				A59A6A0F16D1BBFA00A03473 /* ListOfListsCell.m in Sources */,
 				A59A6A2216D2A02E00A03473 /* ListDetailViewController.m in Sources */,
 				A59A6A2F16D2A06900A03473 /* ListDetailCell.m in Sources */,
-				A59A6A3216D2A23100A03473 /* ItemDetailViewController.m in Sources */,
+				A59A6A4C16D3231900A03473 /* ShoppingList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
