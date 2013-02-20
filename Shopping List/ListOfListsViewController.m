@@ -10,6 +10,7 @@
 #import "ListOfListsCell.h"
 #import "AppDelegate.h"
 #import "ItemDetailViewController.h"
+#import "AddNewListViewController.h"
 
 @interface ListOfListsViewController ()
 @end
@@ -37,8 +38,52 @@
     [listOfLists addObject: firstList];
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(addNewItem)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    //UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(addNewItem)];
+    //self.navigationItem.rightBarButtonItem = rightButton;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)addItem:sender
+{
+    if (AddNewListViewController == nil)
+    {
+        itemInputController = [[UIMenuController alloc] init];
+    }
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:AddNewListViewController];
+    [[self navigationController] presentModalViewController:navigationController animated:YES];
+    //[navigationController release];
+}
+
+- (void)save:sender
+{
+    UITextField *textField = [(EditableTableViewTextField *)[tableView cellForRowAtIndexPat[NSIndexPath indexPathForRow:0 inSection:0]] textField];
+    
+    SimpleEditableListAppDelegate *controller = (SimpleEditableListAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSString *newItem = textField.text;
+    
+    if (newItem != nil)
+    {
+        [controller insertObject:newItem inListAtIndex:[controller countOfList]];
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    [super setEditing:editing animated:animated];
+    [tableView setEditing:editing animated:YES];
+    if (editing)
+    {
+        addButton.enabled = NO;
+    }
+    else
+    {
+        addButton.enabled = YES;
+    }
 }
 
 - (void) addNewItem

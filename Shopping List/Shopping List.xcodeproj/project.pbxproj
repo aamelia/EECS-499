@@ -33,7 +33,6 @@
 		A59A6A2F16D2A06900A03473 /* ListDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A2E16D2A06900A03473 /* ListDetailCell.m */; };
 		A59A6A4C16D3231900A03473 /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = A59A6A4B16D3231900A03473 /* ShoppingList.m */; };
 		A5AE568116D3ECA00027FAA5 /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AE568016D3ECA00027FAA5 /* ItemDetailViewController.m */; };
-		A5AE569816D409690027FAA5 /* AddNewListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AE569716D409690027FAA5 /* AddNewListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -385,8 +384,6 @@
 		A59A6A4B16D3231900A03473 /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
 		A5AE567F16D3ECA00027FAA5 /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
 		A5AE568016D3ECA00027FAA5 /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
-		A5AE569616D409690027FAA5 /* AddNewListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNewListViewController.h; sourceTree = "<group>"; };
-		A5AE569716D409690027FAA5 /* AddNewListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNewListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -962,8 +959,6 @@
 				A5958ED616BDFE020090665C /* AppDelegate.h */,
 				A5958ED716BDFE020090665C /* AppDelegate.m */,
 				A5958EDF16BDFE030090665C /* MainStoryboard.storyboard */,
-				A5AE569616D409690027FAA5 /* AddNewListViewController.h */,
-				A5AE569716D409690027FAA5 /* AddNewListViewController.m */,
 				A5AE567F16D3ECA00027FAA5 /* ItemDetailViewController.h */,
 				A5AE568016D3ECA00027FAA5 /* ItemDetailViewController.m */,
 				A59A6A4A16D3231900A03473 /* ShoppingList.h */,
@@ -1248,7 +1243,6 @@
 				A59A6A2F16D2A06900A03473 /* ListDetailCell.m in Sources */,
 				A59A6A4C16D3231900A03473 /* ShoppingList.m in Sources */,
 				A5AE568116D3ECA00027FAA5 /* ItemDetailViewController.m in Sources */,
-				A5AE569816D409690027FAA5 /* AddNewListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
