@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    //NSMutableArray *myLists;
+}
 
 @property (strong, nonatomic) UIWindow *window;
 
