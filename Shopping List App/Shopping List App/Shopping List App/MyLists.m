@@ -38,7 +38,7 @@
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(addNewItem)];
     
-    //self.navigationItem.rightBarButtonItem = rightButton;
+    self.navigationItem.rightBarButtonItem = rightButton;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -68,11 +68,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+{   
+    static NSString *CellIdentifier = @"MyListsCell";
+    MyListsCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
-    // Configure the cell...
+    //Configure the cell
+    
+    int row = [indexPath row];
+    ShoppingList *temp = allLists[row];
+    cell.listName.text = temp.owner;
     
     return cell;
 }

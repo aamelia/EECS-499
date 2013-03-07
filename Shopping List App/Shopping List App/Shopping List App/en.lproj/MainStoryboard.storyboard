@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4bp-BF-PRc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Xat-Ks-K3q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="4bp-BF-PRc" customClass="Welcome" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1EA-vR-S69">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnf-7z-QWo">
@@ -66,6 +66,7 @@
                             <constraint firstItem="YMH-7w-T2A" firstAttribute="top" secondItem="n0J-tM-ai9" secondAttribute="top" type="default" id="zXx-kz-Nfw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="UHq-8p-Tpu"/>
                     <connections>
                         <outlet property="addListButton" destination="YMH-7w-T2A" id="KxG-rg-2jY"/>
                         <outlet property="myListsButton" destination="n0J-tM-ai9" id="R75-SH-7rM"/>
@@ -73,18 +74,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dc4-Rn-tWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-341" y="155"/>
+            <point key="canvasLocation" x="185" y="155"/>
         </scene>
         <!--My Lists - My Lists-->
         <scene sceneID="bKZ-21-518">
             <objects>
                 <tableViewController title="My Lists" id="MeT-8W-1n6" customClass="MyLists" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2I3-8N-VHk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="roe-aa-S2w" customClass="MyListsCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyListsCell" id="roe-aa-S2w" customClass="MyListsCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -108,7 +109,7 @@
                                     <constraint firstItem="ks1-n1-MkH" firstAttribute="top" secondItem="roe-aa-S2w" secondAttribute="top" constant="11" id="seZ-Ua-tGb"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="listName" destination="ks1-n1-MkH" id="0FK-SM-Wpa"/>
+                                    <outlet property="listName" destination="ks1-n1-MkH" id="2mA-37-8sM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -121,7 +122,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQg-ID-9lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="155"/>
+            <point key="canvasLocation" x="844" y="155"/>
         </scene>
         <!--Add List - Add List-->
         <scene sceneID="B3t-fs-ccq">
@@ -232,44 +233,27 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8H-bX-asQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768" y="155"/>
+            <point key="canvasLocation" x="1294" y="155"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oef-FY-Guc">
+            <objects>
+                <navigationController id="Xat-Ks-K3q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pUH-4V-1yh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4bp-BF-PRc" kind="relationship" relationship="rootViewController" id="Odr-ks-34a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTM-Rh-SWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-341" y="155"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AddItem" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddItem.h"/>
-        </class>
-        <class className="AddList" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddList.h"/>
-            <relationships>
-                <relationship kind="action" name="dismissView:"/>
-                <relationship kind="outlet" name="cancelButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="List" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/List.h"/>
-        </class>
-        <class className="MyLists" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLists.h"/>
-        </class>
-        <class className="MyListsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyListsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="Welcome" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Welcome.h"/>
-            <relationships>
-                <relationship kind="action" name="showDefault:"/>
-                <relationship kind="outlet" name="addListButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myListsButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
