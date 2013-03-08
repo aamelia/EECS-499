@@ -17,7 +17,6 @@
 		A56D1D7616E7EAC6008B3C9D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A56D1D7516E7EAC6008B3C9D /* Default@2x.png */; };
 		A56D1D7816E7EAC6008B3C9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A56D1D7716E7EAC6008B3C9D /* Default-568h@2x.png */; };
 		A56D1D7B16E7EAC6008B3C9D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56D1D7916E7EAC6008B3C9D /* MainStoryboard.storyboard */; };
-		A56D1D7E16E7EAC6008B3C9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1D7D16E7EAC6008B3C9D /* ViewController.m */; };
 		A56D1D8616E7EAC6008B3C9D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D1D8516E7EAC6008B3C9D /* SenTestingKit.framework */; };
 		A56D1D8716E7EAC6008B3C9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D1D6116E7EAC6008B3C9D /* UIKit.framework */; };
 		A56D1D8816E7EAC6008B3C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D1D6316E7EAC6008B3C9D /* Foundation.framework */; };
@@ -58,8 +57,6 @@
 		A56D1D7516E7EAC6008B3C9D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A56D1D7716E7EAC6008B3C9D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A56D1D7A16E7EAC6008B3C9D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		A56D1D7C16E7EAC6008B3C9D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A56D1D7D16E7EAC6008B3C9D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A56D1D8416E7EAC6008B3C9D /* Shopping List AppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopping List AppTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56D1D8516E7EAC6008B3C9D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A56D1D8D16E7EAC6008B3C9D /* Shopping List AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Shopping List AppTests-Info.plist"; sourceTree = "<group>"; };
@@ -146,8 +143,6 @@
 				A56D1D7016E7EAC6008B3C9D /* AppDelegate.h */,
 				A56D1D7116E7EAC6008B3C9D /* AppDelegate.m */,
 				A56D1D7916E7EAC6008B3C9D /* MainStoryboard.storyboard */,
-				A56D1D7C16E7EAC6008B3C9D /* ViewController.h */,
-				A56D1D7D16E7EAC6008B3C9D /* ViewController.m */,
 				A56D1D6816E7EAC6008B3C9D /* Supporting Files */,
 			);
 			path = "Shopping List App";
@@ -328,7 +323,6 @@
 			files = (
 				A56D1D6E16E7EAC6008B3C9D /* main.m in Sources */,
 				A56D1D7216E7EAC6008B3C9D /* AppDelegate.m in Sources */,
-				A56D1D7E16E7EAC6008B3C9D /* ViewController.m in Sources */,
 				A56D1D9E16E7EC99008B3C9D /* MyLists.m in Sources */,
 				A56D1DA116E7ECA6008B3C9D /* List.m in Sources */,
 				A56D1DA416E7ECBD008B3C9D /* Welcome.m in Sources */,
@@ -519,6 +513,7 @@
 				A56D1D9816E7EAC6008B3C9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A56D1D9916E7EAC6008B3C9D /* Build configuration list for PBXNativeTarget "Shopping List AppTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +522,7 @@
 				A56D1D9B16E7EAC6008B3C9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

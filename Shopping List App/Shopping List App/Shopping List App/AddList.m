@@ -9,14 +9,24 @@
 #import "AddList.h"
 
 @interface AddList ()
-
 @end
 
 @implementation AddList
+@synthesize textField;
 
 - (IBAction)dismissView:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+-(IBAction)backgroundTouched:(id)sender
+{
+    [textField resignFirstResponder];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

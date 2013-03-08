@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ShoppingList.h"
 #import "MyListsCell.h"
+#import "List.h"
 
 @interface MyLists : UITableViewController
 {

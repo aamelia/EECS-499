@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface AddList : UIViewController
+{
+    IBOutlet UITextField *textField;
+}
+
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (nonatomic, retain) IBOutlet UITextField *textField;
+
 - (IBAction)dismissView:(id)sender;
+- (IBAction)textFieldReturn: (id)sender;
+- (IBAction)backgroundTouched:(id)sender;
+
 @end

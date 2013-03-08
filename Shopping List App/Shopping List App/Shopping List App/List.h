@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShoppingList.h"
 
 @interface List : UITableViewController
+{
+    ShoppingList *currentShoppingList;
+}
+
+@property (nonatomic, strong) ShoppingList *currentShoppingList;
 
 @end

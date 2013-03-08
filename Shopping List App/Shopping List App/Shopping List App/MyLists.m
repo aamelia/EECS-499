@@ -29,7 +29,6 @@
     allLists = [[NSMutableArray alloc] init];
 
     ShoppingList *firstList = [[ShoppingList alloc] init];
-    firstList.owner = @"List Owner Name";
     firstList.name = @"My First List";
     
     [allLists addObject: firstList];
@@ -44,7 +43,35 @@
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"ShowItemDetails"])
+    {
+        // Get reference to the destination view controller
+        List *vc = [segue destinationViewController];
+        
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        
+        int row = [myIndexPath row];
+        ShoppingList *temp = allLists[row];
+        
+        // Pass any objects to the view controller here, like...
+        vc.currentShoppingList = temp;
+
+    }
+}
+
+- (void) addNewItem
+{
+    ShoppingList *newList = [[ShoppingList alloc] init];
+    newList.name = @"New Name";
+    [allLists addObject: newList];
+    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +103,6 @@
     
     int row = [indexPath row];
     ShoppingList *temp = allLists[row];
-    cell.listName.text = temp.owner;
     
     return cell;
 }
@@ -90,19 +116,22 @@
 }
 */
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [allLists removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
+        NSLog(@"Inserting function");
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

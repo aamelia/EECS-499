@@ -9,10 +9,10 @@
 #import "List.h"
 
 @interface List ()
-
 @end
 
 @implementation List
+@synthesize currentShoppingList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
