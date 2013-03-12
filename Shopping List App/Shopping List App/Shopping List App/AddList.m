@@ -14,6 +14,22 @@
 @implementation AddList
 @synthesize textField;
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"ShowList"])
+    {
+        // Get reference to the destination view controller
+        MyLists *vc = [segue destinationViewController];
+        
+        vc.currentlyAdding = textField.text;
+        vc.newItemToAdd = TRUE;
+        
+        //vc.currentShoppingList = temp;
+        
+    }
+}
+
 - (IBAction)dismissView:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];

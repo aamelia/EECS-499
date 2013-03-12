@@ -15,6 +15,11 @@
 @interface MyLists : UITableViewController
 {
     NSMutableArray *allLists;
+    NSString *currentlyAdding;
+    BOOL newItemToAdd;
 }
+
+@property (nonatomic, strong) NSString *currentlyAdding;
+@property (nonatomic, assign) BOOL *newItemToAdd;
 
 @end

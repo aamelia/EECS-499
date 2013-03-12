@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyLists.h"
 
 @interface AddList : UIViewController
 {

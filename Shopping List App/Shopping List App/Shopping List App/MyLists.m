@@ -13,6 +13,7 @@
 @end
 
 @implementation MyLists
+@synthesize currentlyAdding;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,6 +28,10 @@
 {
     [super viewDidLoad];
     allLists = [[NSMutableArray alloc] init];
+    if(newItemToAdd)
+    {
+        [self addNewItem2];//: @"NewList2" sender: self];
+    }
 
     ShoppingList *firstList = [[ShoppingList alloc] init];
     firstList.name = @"My First List";
@@ -49,7 +54,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
-    if ([[segue identifier] isEqualToString:@"ShowItemDetails"])
+    if ([[segue identifier] isEqualToString:@"ShowList"])
     {
         // Get reference to the destination view controller
         List *vc = [segue destinationViewController];
@@ -67,11 +72,20 @@
 
 - (void) addNewItem
 {
+    [self performSegueWithIdentifier: @"NewList2" sender: self];
+    //ShoppingList *newList = [[ShoppingList alloc] init];
+    //newList.name = currentlyAdding;
+    //[allLists addObject: newList];
+    //[self.tableView reloadData];
+}
+
+- (void) addNewItem2
+{
     ShoppingList *newList = [[ShoppingList alloc] init];
-    newList.name = @"New Name";
+    newList.name = currentlyAdding;
     [allLists addObject: newList];
-    
     [self.tableView reloadData];
+    newItemToAdd = FALSE;
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7B182461157A48F200EC7CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B182460157A48F200EC7CEC /* UIKit.framework */; };
+		7B182463157A48F200EC7CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B182462157A48F200EC7CEC /* Foundation.framework */; };
+		7B182465157A48F200EC7CEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B182464157A48F200EC7CEC /* CoreGraphics.framework */; };
+		7B18246B157A48F200EC7CEC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B182469157A48F200EC7CEC /* InfoPlist.strings */; };
+		7B18246D157A48F200EC7CEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18246C157A48F200EC7CEC /* main.m */; };
+		7B182471157A48F200EC7CEC /* ChecklistsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B182470157A48F200EC7CEC /* ChecklistsAppDelegate.m */; };
+		7B182474157A48F200EC7CEC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B182472157A48F200EC7CEC /* MainStoryboard.storyboard */; };
+		7B182477157A48F200EC7CEC /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B182476157A48F200EC7CEC /* ChecklistViewController.m */; };
+		7B182483157AB01500EC7CEC /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B182482157AB01500EC7CEC /* ChecklistItem.m */; };
+		7B18248F157B634600EC7CEC /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18248E157B634600EC7CEC /* ItemDetailViewController.m */; };
+		7B1824A1157BA2F200EC7CEC /* AllListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1824A0157BA2F200EC7CEC /* AllListsViewController.m */; };
+		7B1824A4157BA44700EC7CEC /* Checklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1824A3157BA44700EC7CEC /* Checklist.m */; };
+		7B1824A7157BA5C900EC7CEC /* ListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1824A6157BA5C900EC7CEC /* ListDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7B18245C157A48F200EC7CEC /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B182460157A48F200EC7CEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7B182462157A48F200EC7CEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7B182464157A48F200EC7CEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7B182468157A48F200EC7CEC /* Checklists-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Checklists-Info.plist"; sourceTree = "<group>"; };
+		7B18246A157A48F200EC7CEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7B18246C157A48F200EC7CEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7B18246E157A48F200EC7CEC /* Checklists-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Checklists-Prefix.pch"; sourceTree = "<group>"; };
+		7B18246F157A48F200EC7CEC /* ChecklistsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistsAppDelegate.h; sourceTree = "<group>"; };
+		7B182470157A48F200EC7CEC /* ChecklistsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsAppDelegate.m; sourceTree = "<group>"; };
+		7B182473157A48F200EC7CEC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7B182475157A48F200EC7CEC /* ChecklistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChecklistViewController.h; sourceTree = "<group>"; };
+		7B182476157A48F200EC7CEC /* ChecklistViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistViewController.m; sourceTree = "<group>"; };
+		7B182481157AB01500EC7CEC /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
+		7B182482157AB01500EC7CEC /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
+		7B18248D157B634600EC7CEC /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
+		7B18248E157B634600EC7CEC /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		7B18249F157BA2F200EC7CEC /* AllListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllListsViewController.h; sourceTree = "<group>"; };
+		7B1824A0157BA2F200EC7CEC /* AllListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllListsViewController.m; sourceTree = "<group>"; };
+		7B1824A2157BA44700EC7CEC /* Checklist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Checklist.h; sourceTree = "<group>"; };
+		7B1824A3157BA44700EC7CEC /* Checklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Checklist.m; sourceTree = "<group>"; };
+		7B1824A5157BA5C900EC7CEC /* ListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDetailViewController.h; sourceTree = "<group>"; };
+		7B1824A6157BA5C900EC7CEC /* ListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B182459157A48F200EC7CEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B182461157A48F200EC7CEC /* UIKit.framework in Frameworks */,
+				7B182463157A48F200EC7CEC /* Foundation.framework in Frameworks */,
+				7B182465157A48F200EC7CEC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7B182451157A48F100EC7CEC = {
+			isa = PBXGroup;
+			children = (
+				7B182466157A48F200EC7CEC /* Checklists */,
+				7B18245F157A48F200EC7CEC /* Frameworks */,
+				7B18245D157A48F200EC7CEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B18245D157A48F200EC7CEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B18245C157A48F200EC7CEC /* Checklists.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B18245F157A48F200EC7CEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B182460157A48F200EC7CEC /* UIKit.framework */,
+				7B182462157A48F200EC7CEC /* Foundation.framework */,
+				7B182464157A48F200EC7CEC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B182466157A48F200EC7CEC /* Checklists */ = {
+			isa = PBXGroup;
+			children = (
+				7B18246F157A48F200EC7CEC /* ChecklistsAppDelegate.h */,
+				7B182470157A48F200EC7CEC /* ChecklistsAppDelegate.m */,
+				7B182472157A48F200EC7CEC /* MainStoryboard.storyboard */,
+				7B18249F157BA2F200EC7CEC /* AllListsViewController.h */,
+				7B1824A0157BA2F200EC7CEC /* AllListsViewController.m */,
+				7B1824A5157BA5C900EC7CEC /* ListDetailViewController.h */,
+				7B1824A6157BA5C900EC7CEC /* ListDetailViewController.m */,
+				7B182475157A48F200EC7CEC /* ChecklistViewController.h */,
+				7B182476157A48F200EC7CEC /* ChecklistViewController.m */,
+				7B18248D157B634600EC7CEC /* ItemDetailViewController.h */,
+				7B18248E157B634600EC7CEC /* ItemDetailViewController.m */,
+				7B1824A2157BA44700EC7CEC /* Checklist.h */,
+				7B1824A3157BA44700EC7CEC /* Checklist.m */,
+				7B182481157AB01500EC7CEC /* ChecklistItem.h */,
+				7B182482157AB01500EC7CEC /* ChecklistItem.m */,
+				7B182467157A48F200EC7CEC /* Supporting Files */,
+			);
+			path = Checklists;
+			sourceTree = "<group>";
+		};
+		7B182467157A48F200EC7CEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7B182468157A48F200EC7CEC /* Checklists-Info.plist */,
+				7B182469157A48F200EC7CEC /* InfoPlist.strings */,
+				7B18246C157A48F200EC7CEC /* main.m */,
+				7B18246E157A48F200EC7CEC /* Checklists-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7B18245B157A48F200EC7CEC /* Checklists */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7B18247A157A48F200EC7CEC /* Build configuration list for PBXNativeTarget "Checklists" */;
+			buildPhases = (
+				7B182458157A48F200EC7CEC /* Sources */,
+				7B182459157A48F200EC7CEC /* Frameworks */,
+				7B18245A157A48F200EC7CEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Checklists;
+			productName = Checklists;
+			productReference = 7B18245C157A48F200EC7CEC /* Checklists.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7B182453157A48F200EC7CEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Checklists;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Hollance;
+			};
+			buildConfigurationList = 7B182456157A48F200EC7CEC /* Build configuration list for PBXProject "Checklists" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7B182451157A48F100EC7CEC;
+			productRefGroup = 7B18245D157A48F200EC7CEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7B18245B157A48F200EC7CEC /* Checklists */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7B18245A157A48F200EC7CEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B18246B157A48F200EC7CEC /* InfoPlist.strings in Resources */,
+				7B182474157A48F200EC7CEC /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B182458157A48F200EC7CEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B18246D157A48F200EC7CEC /* main.m in Sources */,
+				7B182471157A48F200EC7CEC /* ChecklistsAppDelegate.m in Sources */,
+				7B182477157A48F200EC7CEC /* ChecklistViewController.m in Sources */,
+				7B182483157AB01500EC7CEC /* ChecklistItem.m in Sources */,
+				7B18248F157B634600EC7CEC /* ItemDetailViewController.m in Sources */,
+				7B1824A1157BA2F200EC7CEC /* AllListsViewController.m in Sources */,
+				7B1824A4157BA44700EC7CEC /* Checklist.m in Sources */,
+				7B1824A7157BA5C900EC7CEC /* ListDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7B182469157A48F200EC7CEC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B18246A157A48F200EC7CEC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7B182472157A48F200EC7CEC /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B182473157A48F200EC7CEC /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7B182478157A48F200EC7CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7B182479157A48F200EC7CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7B18247B157A48F200EC7CEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Checklists/Checklists-Prefix.pch";
+				INFOPLIST_FILE = "Checklists/Checklists-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7B18247C157A48F200EC7CEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Checklists/Checklists-Prefix.pch";
+				INFOPLIST_FILE = "Checklists/Checklists-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7B182456157A48F200EC7CEC /* Build configuration list for PBXProject "Checklists" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B182478157A48F200EC7CEC /* Debug */,
+				7B182479157A48F200EC7CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7B18247A157A48F200EC7CEC /* Build configuration list for PBXNativeTarget "Checklists" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7B18247B157A48F200EC7CEC /* Debug */,
+				7B18247C157A48F200EC7CEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7B182453157A48F200EC7CEC /* Project object */;
+}

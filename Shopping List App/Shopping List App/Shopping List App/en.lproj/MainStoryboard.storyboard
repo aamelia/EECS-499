@@ -50,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="7ul-Xz-Le3" kind="modal" id="tFM-Zh-BSn"/>
+                                    <segue destination="UAC-Jm-F8i" kind="modal" identifier="NewList1" id="tFM-Zh-BSn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,7 +110,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="listName" destination="ks1-n1-MkH" id="2mA-37-8sM"/>
-                                    <segue destination="hfZ-xd-K8y" kind="push" id="s6w-C5-k9j"/>
+                                    <segue destination="hfZ-xd-K8y" kind="push" identifier="ShowList" id="s6w-C5-k9j"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -120,6 +120,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Lists" id="qRP-JD-Qdb"/>
+                    <connections>
+                        <segue destination="UAC-Jm-F8i" kind="modal" identifier="NewList2" id="XqY-Kw-XNt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQg-ID-9lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -130,7 +133,7 @@
             <objects>
                 <viewController title="Add List" id="7ul-Xz-Le3" customClass="AddList" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C6J-Sb-1tp" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Add New List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAo-kZ-CWp">
@@ -183,6 +186,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="MeT-8W-1n6" kind="push" identifier="ShowList" id="2F7-EB-FNx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -205,13 +211,14 @@
                             <action selector="backgroundTouched:" destination="7ul-Xz-Le3" eventType="touchDown" id="4av-Gx-sRJ"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="yXY-9w-4AC"/>
                     <connections>
                         <outlet property="textField" destination="HY0-Ji-85s" id="9gL-6c-5Mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1i-eL-mR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="-643"/>
+            <point key="canvasLocation" x="1038" y="-687"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="yF0-Tu-6W4">
@@ -279,14 +286,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDI-Is-xOt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="-643"/>
+            <point key="canvasLocation" x="1714" y="-643"/>
         </scene>
         <!--List-->
         <scene sceneID="zXJ-83-Ah8">
             <objects>
                 <tableViewController id="hfZ-xd-K8y" customClass="List" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SPM-9V-Ky3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -344,6 +351,24 @@
             </objects>
             <point key="canvasLocation" x="-341" y="155"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qle-4b-j3p">
+            <objects>
+                <navigationController id="UAC-Jm-F8i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t6I-9D-bvj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7ul-Xz-Le3" kind="relationship" relationship="rootViewController" id="xeY-tb-stL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h9h-PI-FO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="-687"/>
+        </scene>
     </scenes>
     <classes>
         <class className="AddItem" superclassName="UIViewController">
@@ -389,6 +414,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ss9-QV-Zl8"/>
+        <segue reference="tFM-Zh-BSn"/>
+        <segue reference="2F7-EB-FNx"/>
+        <segue reference="s6w-C5-k9j"/>
     </inferredMetricsTieBreakers>
 </document>
