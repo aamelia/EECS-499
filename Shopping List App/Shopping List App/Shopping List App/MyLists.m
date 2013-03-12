@@ -20,6 +20,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -28,15 +29,13 @@
 {
     [super viewDidLoad];
     allLists = [[NSMutableArray alloc] init];
-    if(newItemToAdd)
-    {
-        [self addNewItem2];//: @"NewList2" sender: self];
-    }
-
-    ShoppingList *firstList = [[ShoppingList alloc] init];
-    firstList.name = @"My First List";
+    [self addNewItem2];
     
-    [allLists addObject: firstList];
+    //ShoppingList *firstList = [[ShoppingList alloc] init];
+    //firstList.name = @"My Blah List";
+    
+    //[allLists addObject: firstList];
+
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
@@ -44,6 +43,10 @@
     
     self.navigationItem.rightBarButtonItem = rightButton;
 
+    [self.tableView reloadData];
+
+    NSLog(@"\nThe size of the list is: %i", allLists.count);
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -73,6 +76,7 @@
 - (void) addNewItem
 {
     [self performSegueWithIdentifier: @"NewList2" sender: self];
+    //NSLog(@"AddNewItem");
     //ShoppingList *newList = [[ShoppingList alloc] init];
     //newList.name = currentlyAdding;
     //[allLists addObject: newList];
@@ -81,11 +85,13 @@
 
 - (void) addNewItem2
 {
-    ShoppingList *newList = [[ShoppingList alloc] init];
-    newList.name = currentlyAdding;
-    [allLists addObject: newList];
-    [self.tableView reloadData];
-    newItemToAdd = FALSE;
+    if(![currentlyAdding isEqualToString:@""] && !currentlyAdding == NULL)
+    {
+        ShoppingList *newList = [[ShoppingList alloc] init];
+        newList.name = currentlyAdding;
+        [allLists addObject: newList];
+        NSLog(@"addNewItem2: %@", currentlyAdding);
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -115,8 +121,10 @@
     
     //Configure the cell
     
+    
     int row = [indexPath row];
     ShoppingList *temp = allLists[row];
+    cell.listName.text = temp.name;
     
     return cell;
 }

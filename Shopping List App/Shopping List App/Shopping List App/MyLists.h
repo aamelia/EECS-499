@@ -16,7 +16,6 @@
 {
     NSMutableArray *allLists;
     NSString *currentlyAdding;
-    BOOL newItemToAdd;
 }
 
 @property (nonatomic, strong) NSString *currentlyAdding;
