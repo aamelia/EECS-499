@@ -14,28 +14,35 @@
 
 @implementation MyLists
 @synthesize currentlyAdding;
+@synthesize allLists;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"ViewDidAppear\n");
+    [self addNewItem2];
+    [self.tableView reloadData];
+    
+    NSLog(@"\nThe size of the list is: %i", allLists.count);
+}
+
 - (void)viewDidLoad
 {
+    NSLog(@"ViewDidLoad\n");
     [super viewDidLoad];
     allLists = [[NSMutableArray alloc] init];
-    [self addNewItem2];
-    
+    //[self addNewItem2];
     //ShoppingList *firstList = [[ShoppingList alloc] init];
     //firstList.name = @"My Blah List";
-    
     //[allLists addObject: firstList];
-
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
@@ -43,9 +50,9 @@
     
     self.navigationItem.rightBarButtonItem = rightButton;
 
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 
-    NSLog(@"\nThe size of the list is: %i", allLists.count);
+    //NSLog(@"\nThe size of the list is: %i", allLists.count);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -91,6 +98,7 @@
         newList.name = currentlyAdding;
         [allLists addObject: newList];
         NSLog(@"addNewItem2: %@", currentlyAdding);
+        //[release newList];
     }
 }
 

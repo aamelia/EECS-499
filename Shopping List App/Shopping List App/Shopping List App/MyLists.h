@@ -18,6 +18,7 @@
     NSString *currentlyAdding;
 }
 
+@property(nonatomic,retain)NSMutableArray *allLists;
 @property (nonatomic, strong) NSString *currentlyAdding;
 @property (nonatomic, assign) BOOL *newItemToAdd;
 
