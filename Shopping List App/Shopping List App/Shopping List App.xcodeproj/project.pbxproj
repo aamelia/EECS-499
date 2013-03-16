@@ -25,8 +25,6 @@
 		A56D1D9E16E7EC99008B3C9D /* MyLists.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1D9D16E7EC99008B3C9D /* MyLists.m */; };
 		A56D1DA116E7ECA6008B3C9D /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DA016E7ECA6008B3C9D /* List.m */; };
 		A56D1DA416E7ECBD008B3C9D /* Welcome.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DA316E7ECBD008B3C9D /* Welcome.m */; };
-		A56D1DA716E7ECC9008B3C9D /* AddList.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DA616E7ECC9008B3C9D /* AddList.m */; };
-		A56D1DAA16E7ECD5008B3C9D /* AddItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DA916E7ECD5008B3C9D /* AddItem.m */; };
 		A56D1DB016E7F698008B3C9D /* MyListsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DAF16E7F698008B3C9D /* MyListsCell.m */; };
 		A56D1DB316E7F6A3008B3C9D /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DB216E7F6A3008B3C9D /* ListCell.m */; };
 		A56D1DC016E80368008B3C9D /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = A56D1DBF16E80368008B3C9D /* ShoppingList.m */; };
@@ -69,10 +67,6 @@
 		A56D1DA016E7ECA6008B3C9D /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		A56D1DA216E7ECBD008B3C9D /* Welcome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Welcome.h; sourceTree = "<group>"; };
 		A56D1DA316E7ECBD008B3C9D /* Welcome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Welcome.m; sourceTree = "<group>"; };
-		A56D1DA516E7ECC9008B3C9D /* AddList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddList.h; sourceTree = "<group>"; };
-		A56D1DA616E7ECC9008B3C9D /* AddList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddList.m; sourceTree = "<group>"; };
-		A56D1DA816E7ECD5008B3C9D /* AddItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItem.h; sourceTree = "<group>"; };
-		A56D1DA916E7ECD5008B3C9D /* AddItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItem.m; sourceTree = "<group>"; };
 		A56D1DAE16E7F698008B3C9D /* MyListsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyListsCell.h; sourceTree = "<group>"; };
 		A56D1DAF16E7F698008B3C9D /* MyListsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyListsCell.m; sourceTree = "<group>"; };
 		A56D1DB116E7F6A3008B3C9D /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
@@ -187,8 +181,6 @@
 				A56D1DAE16E7F698008B3C9D /* MyListsCell.h */,
 				A56D1DBE16E80368008B3C9D /* ShoppingList.h */,
 				A56D1DB116E7F6A3008B3C9D /* ListCell.h */,
-				A56D1DA816E7ECD5008B3C9D /* AddItem.h */,
-				A56D1DA516E7ECC9008B3C9D /* AddList.h */,
 				A56D1DA216E7ECBD008B3C9D /* Welcome.h */,
 				A56D1D9F16E7ECA6008B3C9D /* List.h */,
 				A56D1D9C16E7EC99008B3C9D /* MyLists.h */,
@@ -199,9 +191,7 @@
 		A56D1DAD16E7ED01008B3C9D /* Implementation Files */ = {
 			isa = PBXGroup;
 			children = (
-				A56D1DA916E7ECD5008B3C9D /* AddItem.m */,
 				A56D1DA016E7ECA6008B3C9D /* List.m */,
-				A56D1DA616E7ECC9008B3C9D /* AddList.m */,
 				A56D1DAF16E7F698008B3C9D /* MyListsCell.m */,
 				A56D1DB216E7F6A3008B3C9D /* ListCell.m */,
 				A56D1DA316E7ECBD008B3C9D /* Welcome.m */,
@@ -326,8 +316,6 @@
 				A56D1D9E16E7EC99008B3C9D /* MyLists.m in Sources */,
 				A56D1DA116E7ECA6008B3C9D /* List.m in Sources */,
 				A56D1DA416E7ECBD008B3C9D /* Welcome.m in Sources */,
-				A56D1DA716E7ECC9008B3C9D /* AddList.m in Sources */,
-				A56D1DAA16E7ECD5008B3C9D /* AddItem.m in Sources */,
 				A56D1DB016E7F698008B3C9D /* MyListsCell.m in Sources */,
 				A56D1DB316E7F6A3008B3C9D /* ListCell.m in Sources */,
 				A56D1DC016E80368008B3C9D /* ShoppingList.m in Sources */,

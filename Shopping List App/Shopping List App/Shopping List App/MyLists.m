@@ -25,12 +25,32 @@
     return self;
 }
 
+- (IBAction) showMessage
+{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Enter A New List Name"
+                                                      message:nil
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Create", nil];
+    [message setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
+        ShoppingList *firstList = [[ShoppingList alloc] init];
+        firstList.name = [[alertView textFieldAtIndex:0] text];
+        [allLists addObject: firstList];
+        [self.tableView reloadData];
+    }
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"ViewDidAppear\n");
-    [self addNewItem2];
-    [self.tableView reloadData];
-    
     NSLog(@"\nThe size of the list is: %i", allLists.count);
 }
 
@@ -39,26 +59,9 @@
     NSLog(@"ViewDidLoad\n");
     [super viewDidLoad];
     allLists = [[NSMutableArray alloc] init];
-    //[self addNewItem2];
-    //ShoppingList *firstList = [[ShoppingList alloc] init];
-    //firstList.name = @"My Blah List";
-    //[allLists addObject: firstList];
-    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(addNewItem)];
-    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
-
-    //[self.tableView reloadData];
-
-    //NSLog(@"\nThe size of the list is: %i", allLists.count);
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -77,28 +80,6 @@
         // Pass any objects to the view controller here, like...
         vc.currentShoppingList = temp;
 
-    }
-}
-
-- (void) addNewItem
-{
-    [self performSegueWithIdentifier: @"NewList2" sender: self];
-    //NSLog(@"AddNewItem");
-    //ShoppingList *newList = [[ShoppingList alloc] init];
-    //newList.name = currentlyAdding;
-    //[allLists addObject: newList];
-    //[self.tableView reloadData];
-}
-
-- (void) addNewItem2
-{
-    if(![currentlyAdding isEqualToString:@""] && !currentlyAdding == NULL)
-    {
-        ShoppingList *newList = [[ShoppingList alloc] init];
-        newList.name = currentlyAdding;
-        [allLists addObject: newList];
-        NSLog(@"addNewItem2: %@", currentlyAdding);
-        //[release newList];
     }
 }
 

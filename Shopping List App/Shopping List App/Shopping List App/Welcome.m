@@ -14,11 +14,6 @@
 
 @implementation Welcome
 
-- (IBAction)showDefault:(id)sender
-{
-    AddList *sampleView = [AddList alloc];
-    [self presentModalViewController:sampleView animated:YES];
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
