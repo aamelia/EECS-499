@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ShoppingList.h"
+#import "ListCell.h"
+#import "MyLists.h"
 
 @interface List : UITableViewController
 {

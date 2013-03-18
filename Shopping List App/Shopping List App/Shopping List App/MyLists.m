@@ -7,6 +7,7 @@
 //
 
 #import "MyLists.h"
+#import "AppDelegate.h"
 
 @interface MyLists ()
 
@@ -14,7 +15,7 @@
 
 @implementation MyLists
 @synthesize currentlyAdding;
-@synthesize allLists;
+//@synthesize allLists;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -43,6 +44,7 @@
         NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
         ShoppingList *firstList = [[ShoppingList alloc] init];
         firstList.name = [[alertView textFieldAtIndex:0] text];
+        firstList.rowNum = allLists.count;
         [allLists addObject: firstList];
         [self.tableView reloadData];
     }
@@ -79,6 +81,7 @@
         
         // Pass any objects to the view controller here, like...
         vc.currentShoppingList = temp;
+        NSLog(@"Index of selected shopping list is: %i", temp.rowNum);
 
     }
 }

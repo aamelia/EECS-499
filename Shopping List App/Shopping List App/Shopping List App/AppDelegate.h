@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+NSMutableArray *allLists;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-{
-    //NSMutableArray *myLists;
-}
 
 @property (strong, nonatomic) UIWindow *window;
 
 @end
+

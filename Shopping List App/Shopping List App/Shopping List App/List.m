@@ -23,15 +23,40 @@
     return self;
 }
 
+- (IBAction) showMessage
+{
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Enter A New List Name"
+                                                      message:nil
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Create", nil];
+    [message setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    [message show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        NSString *newItem;
+        newItem = [[alertView textFieldAtIndex:0] text];
+        NSLog(@"New Item Name: %@",newItem);
+        
+        [currentShoppingList.listItems addObject: newItem];
+        [self.tableView reloadData];
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    //NSLog(@"\nThe size of the list is: %i", currentShoppingList.listItems.count);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,27 +69,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"The number of rows is: %i", currentShoppingList.listItems.count);
+    return currentShoppingList.listItems.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ListCell";
+    ListCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
-    // Configure the cell...
+    //Configure the cell
+    
+    int row = [indexPath row];
+    cell.itemName.text = @"Test";
     
     return cell;
 }
+
 
 /*
 // Override to support conditional editing of the table view.

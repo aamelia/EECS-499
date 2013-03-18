@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ListCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *itemName;
 @end
