@@ -52,13 +52,12 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"ViewDidAppear\n");
-    NSLog(@"\nThe size of the list is: %i", allLists.count);
+    //NSLog(@"ViewDidAppear\n");
 }
 
 - (void)viewDidLoad
 {
-    NSLog(@"ViewDidLoad\n");
+    //NSLog(@"ViewDidLoad\n");
     [super viewDidLoad];
     allLists = [[NSMutableArray alloc] init];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -68,21 +67,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Make sure your segue name in storyboard is the same as this line
     if ([[segue identifier] isEqualToString:@"ShowList"])
     {
-        // Get reference to the destination view controller
         List *vc = [segue destinationViewController];
-        
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
-        
         int row = [myIndexPath row];
-        ShoppingList *temp = allLists[row];
-        
-        // Pass any objects to the view controller here, like...
-        vc.currentShoppingList = temp;
-        NSLog(@"Index of selected shopping list is: %i", temp.rowNum);
-
+        vc.rowNum = row;
+        NSLog(@"Index of selected shopping list is: %i", row);
     }
 }
 

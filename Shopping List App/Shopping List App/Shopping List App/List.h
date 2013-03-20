@@ -10,12 +10,15 @@
 #import "ShoppingList.h"
 #import "ListCell.h"
 #import "MyLists.h"
+#import "AppDelegate.h"
 
 @interface List : UITableViewController
 {
     ShoppingList *currentShoppingList;
+    int rowNum;
 }
 
-@property (nonatomic, strong) ShoppingList *currentShoppingList;
+//@property (nonatomic, strong) ShoppingList *currentShoppingList;
+@property (nonatomic) int rowNum;
 
 @end

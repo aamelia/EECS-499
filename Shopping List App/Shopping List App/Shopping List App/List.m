@@ -12,7 +12,8 @@
 @end
 
 @implementation List
-@synthesize currentShoppingList;
+//@synthesize currentShoppingList;
+@synthesize rowNum;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,7 +26,7 @@
 
 - (IBAction) showMessage
 {
-    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Enter A New List Name"
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Enter A New List Item"
                                                       message:nil
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
@@ -38,7 +39,8 @@
 {
     if (buttonIndex == 1)
     {
-        NSString *newItem;
+        NSString *newItem = [[NSString alloc] init];
+        
         newItem = [[alertView textFieldAtIndex:0] text];
         NSLog(@"New Item Name: %@",newItem);
         
@@ -49,7 +51,6 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    //NSLog(@"\nThe size of the list is: %i", currentShoppingList.listItems.count);
 }
 
 - (void)viewDidLoad
@@ -57,6 +58,10 @@
     [super viewDidLoad];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    //currentShoppingList = allLists[rowNum];
+    currentShoppingList = [[ShoppingList alloc] init];
+    currentShoppingList.listItems = [[NSMutableArray alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +82,7 @@
 {
     // Return the number of rows in the section.
     NSLog(@"The number of rows is: %i", currentShoppingList.listItems.count);
+    //return 1;
     return currentShoppingList.listItems.count;
 }
 
@@ -85,10 +91,12 @@
     static NSString *CellIdentifier = @"ListCell";
     ListCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
+    
     //Configure the cell
     
     int row = [indexPath row];
-    cell.itemName.text = @"Test";
+    cell.itemName.text = currentShoppingList.listItems[row];
+    //cell.itemName.text = @"Test";
     
     return cell;
 }
