@@ -11,6 +11,7 @@
 #import "ListCell.h"
 #import "MyLists.h"
 #import "AppDelegate.h"
+#import "Item.h"
 
 @interface List : UITableViewController
 {
@@ -18,7 +19,6 @@
     int rowNum;
 }
 
-//@property (nonatomic, strong) ShoppingList *currentShoppingList;
 @property (nonatomic) int rowNum;
 
 @end

@@ -12,7 +12,6 @@
 @end
 
 @implementation List
-//@synthesize currentShoppingList;
 @synthesize rowNum;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -40,10 +39,16 @@
     if (buttonIndex == 1)
     {
         NSString *newItem = [[NSString alloc] init];
+        Item *newItemObject = [[Item alloc] init];
         
         newItem = [[alertView textFieldAtIndex:0] text];
+        newItemObject.name = newItem;
+        
         NSLog(@"New Item Name: %@",newItem);
+        //Add the string to allLists
         [((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems) addObject: newItem];
+        //Add the item to allLists
+        [((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects) addObject: newItemObject];
         
         //[currentShoppingList.listItems addObject: newItem];
         [self.tableView reloadData];
@@ -60,7 +65,6 @@
     [super viewDidLoad];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    //currentShoppingList = allLists[rowNum];
     currentShoppingList = [[ShoppingList alloc] init];
     currentShoppingList.listItems = [[NSMutableArray alloc] init];
 

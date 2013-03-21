@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A542F55516FB48C000B3E793 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A542F55416FB48C000B3E793 /* ItemViewController.m */; };
+		A542F55816FB48D100B3E793 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = A542F55716FB48D100B3E793 /* Item.m */; };
+		A542F55A16FB810300B3E793 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A542F55916FB810300B3E793 /* QuartzCore.framework */; };
 		A56D1D6216E7EAC6008B3C9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D1D6116E7EAC6008B3C9D /* UIKit.framework */; };
 		A56D1D6416E7EAC6008B3C9D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D1D6316E7EAC6008B3C9D /* Foundation.framework */; };
 		A56D1D6616E7EAC6008B3C9D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A56D1D6516E7EAC6008B3C9D /* CoreGraphics.framework */; };
@@ -41,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A542F55316FB48C000B3E793 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
+		A542F55416FB48C000B3E793 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
+		A542F55616FB48D100B3E793 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		A542F55716FB48D100B3E793 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		A542F55916FB810300B3E793 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A56D1D5E16E7EAC6008B3C9D /* Shopping List App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping List App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A56D1D6116E7EAC6008B3C9D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A56D1D6316E7EAC6008B3C9D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A542F55A16FB810300B3E793 /* QuartzCore.framework in Frameworks */,
 				A56D1D6216E7EAC6008B3C9D /* UIKit.framework in Frameworks */,
 				A56D1D6416E7EAC6008B3C9D /* Foundation.framework in Frameworks */,
 				A56D1D6616E7EAC6008B3C9D /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +111,7 @@
 		A56D1D5516E7EAC6008B3C9D = {
 			isa = PBXGroup;
 			children = (
+				A542F55916FB810300B3E793 /* QuartzCore.framework */,
 				A56D1D6716E7EAC6008B3C9D /* Shopping List App */,
 				A56D1D8B16E7EAC6008B3C9D /* Shopping List AppTests */,
 				A56D1D6016E7EAC6008B3C9D /* Frameworks */,
@@ -181,8 +191,10 @@
 				A56D1DAE16E7F698008B3C9D /* MyListsCell.h */,
 				A56D1DBE16E80368008B3C9D /* ShoppingList.h */,
 				A56D1DB116E7F6A3008B3C9D /* ListCell.h */,
+				A542F55616FB48D100B3E793 /* Item.h */,
 				A56D1DA216E7ECBD008B3C9D /* Welcome.h */,
 				A56D1D9F16E7ECA6008B3C9D /* List.h */,
+				A542F55316FB48C000B3E793 /* ItemViewController.h */,
 				A56D1D9C16E7EC99008B3C9D /* MyLists.h */,
 			);
 			name = "Header Files";
@@ -196,6 +208,8 @@
 				A56D1DB216E7F6A3008B3C9D /* ListCell.m */,
 				A56D1DA316E7ECBD008B3C9D /* Welcome.m */,
 				A56D1D9D16E7EC99008B3C9D /* MyLists.m */,
+				A542F55416FB48C000B3E793 /* ItemViewController.m */,
+				A542F55716FB48D100B3E793 /* Item.m */,
 				A56D1DBF16E80368008B3C9D /* ShoppingList.m */,
 			);
 			name = "Implementation Files";
@@ -319,6 +333,8 @@
 				A56D1DB016E7F698008B3C9D /* MyListsCell.m in Sources */,
 				A56D1DB316E7F6A3008B3C9D /* ListCell.m in Sources */,
 				A56D1DC016E80368008B3C9D /* ShoppingList.m in Sources */,
+				A542F55516FB48C000B3E793 /* ItemViewController.m in Sources */,
+				A542F55816FB48D100B3E793 /* Item.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

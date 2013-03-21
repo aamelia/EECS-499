@@ -17,9 +17,7 @@
     
     name = [[NSString alloc] init];
     listItems = [[NSMutableArray alloc] init];
-    
-    name = @"Insert List Name";
-    
+    listItemObjects = [[NSMutableArray alloc] init];    
     return (self);
 }
 
