@@ -45,6 +45,7 @@
         ShoppingList *firstList = [[ShoppingList alloc] init];
         firstList.name = [[alertView textFieldAtIndex:0] text];
         firstList.rowNum = allLists.count;
+        firstList.listItems = [[NSMutableArray alloc] init];
         [allLists addObject: firstList];
         [self.tableView reloadData];
     }
@@ -53,6 +54,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     //NSLog(@"ViewDidAppear\n");
+    self.navigationItem.title = @"My Lists";
 }
 
 - (void)viewDidLoad

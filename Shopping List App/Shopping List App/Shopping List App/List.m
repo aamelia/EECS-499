@@ -43,14 +43,16 @@
         
         newItem = [[alertView textFieldAtIndex:0] text];
         NSLog(@"New Item Name: %@",newItem);
+        [((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems) addObject: newItem];
         
-        [currentShoppingList.listItems addObject: newItem];
+        //[currentShoppingList.listItems addObject: newItem];
         [self.tableView reloadData];
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    self.navigationItem.title = ((ShoppingList *)allLists[rowNum]).name;
 }
 
 - (void)viewDidLoad
@@ -81,8 +83,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"The number of rows is: %i", currentShoppingList.listItems.count);
-    //return 1;
+    NSLog(@"The number of rows is: %i", ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count);
+    return ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count;
+
     return currentShoppingList.listItems.count;
 }
 
@@ -95,8 +98,9 @@
     //Configure the cell
     
     int row = [indexPath row];
-    cell.itemName.text = currentShoppingList.listItems[row];
-    //cell.itemName.text = @"Test";
+    cell.itemName.text = ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems)[row];
+    
+    //cell.itemName.text = currentShoppingList.listItems[row];
     
     return cell;
 }
