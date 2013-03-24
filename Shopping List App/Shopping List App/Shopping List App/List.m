@@ -44,7 +44,7 @@
         newItem = [[alertView textFieldAtIndex:0] text];
         newItemObject.name = newItem;
         
-        NSLog(@"New Item Name: %@",newItem);
+        //NSLog(@"New Item Name: %@",newItem);
         //Add the string to allLists
         [((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems) addObject: newItem];
         //Add the item to allLists
@@ -70,6 +70,19 @@
 
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowItem"])
+    {
+        ItemViewController *vc = [segue destinationViewController];
+        NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
+        int row = [myIndexPath row];
+        //vc.currentItem.rowNum = row;
+        NSLog(@"List Index of selected shopping list is: %i", row);
+    }
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -87,7 +100,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"The number of rows is: %i", ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count);
+    //NSLog(@"The number of rows is: %i", ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count);
     return ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count;
 
     return currentShoppingList.listItems.count;

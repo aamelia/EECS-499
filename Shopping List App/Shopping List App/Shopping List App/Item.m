@@ -10,6 +10,7 @@
 
 @implementation Item
 @synthesize image, details, name;
+@synthesize rowNum;
 
 - (id)init
 {

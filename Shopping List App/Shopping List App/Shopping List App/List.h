@@ -12,13 +12,13 @@
 #import "MyLists.h"
 #import "AppDelegate.h"
 #import "Item.h"
+#import "ItemViewController.h"//;
 
 @interface List : UITableViewController
 {
     ShoppingList *currentShoppingList;
-    int rowNum;
+    NSInteger rowNum;
 }
 
-@property (nonatomic) int rowNum;
-
+@property NSInteger rowNum;
 @end

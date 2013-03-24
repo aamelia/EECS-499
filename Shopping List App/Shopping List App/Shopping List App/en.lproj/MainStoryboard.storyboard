@@ -139,7 +139,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="itemName" destination="KNM-wm-vze" id="PAD-mg-b1x"/>
-                                    <segue destination="s2i-EN-Glx" kind="push" id="7cL-y4-4Tq"/>
+                                    <segue destination="s2i-EN-Glx" kind="push" identifier="showItem" id="7cL-y4-4Tq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -158,7 +158,7 @@
         <scene sceneID="sMB-qq-ART">
             <objects>
                 <viewController id="s2i-EN-Glx" customClass="ItemViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VIw-yu-Xg9" customClass="UIControl">
+                    <view key="view" contentMode="scaleAspectFit" id="VIw-yu-Xg9" customClass="UIControl">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -173,12 +173,13 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3US-mj-G1Y">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="wsn-hg-Yct"/>
+                                    <constraint firstAttribute="height" constant="81" type="user" id="LOh-N3-I0c"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content=" ">
+                                    <fragment content="  ">
                                         <attributes>
-                                            <font key="NSFont" metaFont="toolTip"/>
+                                            <font key="NSFont" size="12" name="Noteworthy-Light"/>
+                                            <font key="NSOriginalFont" size="12" name="Noteworthy-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -186,9 +187,10 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-jK-k7y">
+                            <imageView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-jK-k7y">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="8Ld-M7-pgP"/>
+                                    <constraint firstAttribute="height" constant="140" id="6G8-nN-zOG"/>
+                                    <constraint firstAttribute="width" constant="183" id="LS0-dL-tWD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnQ-Tw-d1U">
@@ -203,11 +205,14 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getPhoto:" destination="s2i-EN-Glx" eventType="touchUpInside" id="TZh-m3-v7l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkB-rn-ZMi">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="JdI-hC-GcB"/>
-                                    <constraint firstAttribute="height" constant="43" id="nRu-oh-RvF"/>
+                                    <constraint firstAttribute="height" constant="43" type="user" id="nRu-oh-RvF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                 <state key="normal" title="Choose Photo">
@@ -217,6 +222,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getPhoto:" destination="s2i-EN-Glx" eventType="touchUpInside" id="LN3-9P-X14"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter any item details below:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jS5-PL-eYA">
                                 <constraints>
@@ -230,22 +238,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jS5-PL-eYA" firstAttribute="leading" secondItem="VIw-yu-Xg9" secondAttribute="leading" constant="28" id="355-Wc-Zdw"/>
-                            <constraint firstAttribute="bottom" secondItem="IkB-rn-ZMi" secondAttribute="bottom" constant="64" id="6hl-5x-fX8"/>
+                            <constraint firstAttribute="bottom" secondItem="IkB-rn-ZMi" secondAttribute="bottom" constant="31" id="0JU-5L-wVg"/>
+                            <constraint firstItem="gnQ-Tw-d1U" firstAttribute="top" secondItem="IkB-rn-ZMi" secondAttribute="top" type="default" id="39i-mX-O6o"/>
                             <constraint firstAttribute="trailing" secondItem="3US-mj-G1Y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8II-Eg-uzl"/>
                             <constraint firstItem="dSM-p2-1L3" firstAttribute="top" secondItem="VIw-yu-Xg9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9JC-xW-h03"/>
                             <constraint firstItem="3US-mj-G1Y" firstAttribute="leading" secondItem="VIw-yu-Xg9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ghg-SW-Z8N"/>
-                            <constraint firstAttribute="trailing" secondItem="oLa-jK-k7y" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="HE3-Sb-HyG"/>
-                            <constraint firstItem="3US-mj-G1Y" firstAttribute="top" secondItem="VIw-yu-Xg9" secondAttribute="top" constant="92" id="OWc-LS-Ty6"/>
+                            <constraint firstItem="oLa-jK-k7y" firstAttribute="top" secondItem="VIw-yu-Xg9" secondAttribute="top" priority="1" constant="196" type="user" id="K0z-hE-lyH"/>
+                            <constraint firstItem="3US-mj-G1Y" firstAttribute="top" secondItem="VIw-yu-Xg9" secondAttribute="top" constant="92" id="LGQ-Iw-Jme"/>
+                            <constraint firstItem="gnQ-Tw-d1U" firstAttribute="bottom" secondItem="IkB-rn-ZMi" secondAttribute="bottom" type="default" id="NB5-eb-m8F"/>
                             <constraint firstItem="jS5-PL-eYA" firstAttribute="top" secondItem="VIw-yu-Xg9" secondAttribute="top" constant="71" id="Oc9-x8-YjN"/>
                             <constraint firstItem="IkB-rn-ZMi" firstAttribute="leading" secondItem="VIw-yu-Xg9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="QTg-jx-ovF"/>
                             <constraint firstItem="dSM-p2-1L3" firstAttribute="leading" secondItem="VIw-yu-Xg9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SG3-Rc-Dnx"/>
-                            <constraint firstItem="IkB-rn-ZMi" firstAttribute="bottom" secondItem="gnQ-Tw-d1U" secondAttribute="bottom" type="default" id="SMa-Kh-Kfb"/>
-                            <constraint firstItem="oLa-jK-k7y" firstAttribute="top" secondItem="VIw-yu-Xg9" secondAttribute="top" constant="233" id="T2x-29-BKV"/>
-                            <constraint firstItem="oLa-jK-k7y" firstAttribute="leading" secondItem="VIw-yu-Xg9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="qfX-qi-5Ua"/>
+                            <constraint firstItem="oLa-jK-k7y" firstAttribute="centerX" secondItem="3US-mj-G1Y" secondAttribute="centerX" type="default" id="b0c-T9-7Fg"/>
+                            <constraint firstItem="jS5-PL-eYA" firstAttribute="leading" secondItem="VIw-yu-Xg9" secondAttribute="leading" constant="28" id="eve-1c-Y3h"/>
                             <constraint firstAttribute="trailing" secondItem="dSM-p2-1L3" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rED-ro-gW0"/>
                             <constraint firstAttribute="trailing" secondItem="gnQ-Tw-d1U" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sFA-sC-xCB"/>
-                            <constraint firstItem="IkB-rn-ZMi" firstAttribute="top" secondItem="gnQ-Tw-d1U" secondAttribute="top" type="default" id="tQu-8F-vL9"/>
+                            <constraint firstItem="IkB-rn-ZMi" firstAttribute="top" secondItem="oLa-jK-k7y" secondAttribute="bottom" constant="18" type="user" id="wUY-ad-Wjq"/>
+                            <constraint firstItem="gnQ-Tw-d1U" firstAttribute="baseline" secondItem="IkB-rn-ZMi" secondAttribute="baseline" type="user" id="zIv-p7-q8M"/>
                         </constraints>
                         <connections>
                             <action selector="backgroundTouched:" destination="s2i-EN-Glx" eventType="touchUpInside" id="7qT-bL-iHy"/>
@@ -282,49 +291,6 @@
             <point key="canvasLocation" x="-341" y="155"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ItemViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTouched:"/>
-                <relationship kind="action" name="getPhoto:"/>
-                <relationship kind="action" name="textFieldReturn:"/>
-                <relationship kind="outlet" name="choosePhotoBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="takePhotoBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textDetails" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="List" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/List.h"/>
-        </class>
-        <class className="ListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="itemName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MyLists" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLists.h"/>
-        </class>
-        <class className="MyListsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyListsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="Welcome" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Welcome.h"/>
-            <relationships>
-                <relationship kind="action" name="showDefault:"/>
-                <relationship kind="outlet" name="addListButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="myListsButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

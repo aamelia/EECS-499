@@ -41,7 +41,7 @@
 {
     if (buttonIndex == 1)
     {
-        NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
+        //NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
         ShoppingList *firstList = [[ShoppingList alloc] init];
         firstList.name = [[alertView textFieldAtIndex:0] text];
         firstList.rowNum = allLists.count;
@@ -65,6 +65,13 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    // saving an NSString
+    [prefs setObject:@"TextToSave" forKey:@"keyToLookupString"];
+    [prefs setObject:@"]
+
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -75,7 +82,7 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
         vc.rowNum = row;
-        NSLog(@"Index of selected shopping list is: %i", row);
+        NSLog(@"MyList Index of selected shopping list is: %i", row);
     }
 }
 
@@ -134,7 +141,7 @@
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {
-        NSLog(@"Inserting function");
+        //NSLog(@"Inserting function");
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }

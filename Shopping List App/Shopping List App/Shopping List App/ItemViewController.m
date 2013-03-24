@@ -38,6 +38,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    int rowNum = 0;
+    imageView.image = ((Item *)((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects)).image;
+    textDetails.text = ((Item *)((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects)).details;
     textDetails.layer.borderWidth = 3.0f;
     textDetails.layer.borderColor = [[UIColor purpleColor] CGColor];
     textDetails.layer.cornerRadius = 8;
@@ -49,7 +52,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction) getPhoto:(id) sender {
+-(IBAction) getPhoto:(id) sender
+{
 	UIImagePickerController * picker = [[UIImagePickerController alloc] init];
 	picker.delegate = self;
     
