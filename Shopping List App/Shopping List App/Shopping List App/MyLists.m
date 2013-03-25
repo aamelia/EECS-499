@@ -41,37 +41,29 @@
 {
     if (buttonIndex == 1)
     {
-        //NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
-        ShoppingList *firstList = [[ShoppingList alloc] init];
-        firstList.name = [[alertView textFieldAtIndex:0] text];
-        firstList.rowNum = allLists.count;
-        firstList.listItems = [[NSMutableArray alloc] init];
-        [allLists addObject: firstList];
+        NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
+        ShoppingList *newList = [[ShoppingList alloc] init];
+        newList.name = [[alertView textFieldAtIndex:0] text];
+        newList.listItems = [[NSMutableArray alloc] init];
+        [allLists addObject: newList];
+        numLists ++;
         [self.tableView reloadData];
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    //NSLog(@"ViewDidAppear\n");
-    self.navigationItem.title = @"My Lists";
 }
 
 - (void)viewDidLoad
 {
-    //NSLog(@"ViewDidLoad\n");
     [super viewDidLoad];
+    self.navigationItem.title = @"My Lists";
     allLists = [[NSMutableArray alloc] init];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    
-    // saving an NSString
-    [prefs setObject:@"TextToSave" forKey:@"keyToLookupString"];
-    [prefs setObject:@"]
-
+    numLists = 0;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -80,9 +72,8 @@
     {
         List *vc = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
-        int row = [myIndexPath row];
-        vc.rowNum = row;
-        NSLog(@"MyList Index of selected shopping list is: %i", row);
+        currentListIndex = [myIndexPath row];
+        NSLog(@"MyList Index of selected shopping list is: %i", [myIndexPath row]);
     }
 }
 
@@ -112,7 +103,6 @@
     MyListsCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
     //Configure the cell
-    
     
     int row = [indexPath row];
     ShoppingList *temp = allLists[row];

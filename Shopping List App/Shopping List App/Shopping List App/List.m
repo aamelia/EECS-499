@@ -12,7 +12,6 @@
 @end
 
 @implementation List
-@synthesize rowNum;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,26 +37,18 @@
 {
     if (buttonIndex == 1)
     {
-        NSString *newItem = [[NSString alloc] init];
-        Item *newItemObject = [[Item alloc] init];
-        
-        newItem = [[alertView textFieldAtIndex:0] text];
-        newItemObject.name = newItem;
-        
-        //NSLog(@"New Item Name: %@",newItem);
-        //Add the string to allLists
-        [((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems) addObject: newItem];
+        Item *newItem = [[Item alloc] init];
+        newItem.name = [[alertView textFieldAtIndex:0] text];
+        NSLog(@"New Item Name: %@",newItem.name);
         //Add the item to allLists
-        [((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects) addObject: newItemObject];
-        
-        //[currentShoppingList.listItems addObject: newItem];
+        [((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems) addObject: newItem];
         [self.tableView reloadData];
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.navigationItem.title = ((ShoppingList *)allLists[rowNum]).name;
+    self.navigationItem.title = ((ShoppingList *)allLists[currentListIndex]).name;
 }
 
 - (void)viewDidLoad
@@ -65,9 +56,6 @@
     [super viewDidLoad];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
-    currentShoppingList = [[ShoppingList alloc] init];
-    currentShoppingList.listItems = [[NSMutableArray alloc] init];
-
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -77,7 +65,8 @@
         ItemViewController *vc = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
-        //vc.currentItem.rowNum = row;
+        vc.currentItem = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
+        currentItemIndex = row;
         NSLog(@"List Index of selected shopping list is: %i", row);
     }
 }
@@ -100,10 +89,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    //NSLog(@"The number of rows is: %i", ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count);
-    return ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems).count;
-
-    return currentShoppingList.listItems.count;
+    return ((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems).count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,13 +97,9 @@
     static NSString *CellIdentifier = @"ListCell";
     ListCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
-    
     //Configure the cell
-    
     int row = [indexPath row];
-    cell.itemName.text = ((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItems)[row];
-    
-    //cell.itemName.text = currentShoppingList.listItems[row];
+    cell.itemName.text = ((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems)[row];
     
     return cell;
 }

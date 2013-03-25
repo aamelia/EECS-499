@@ -12,14 +12,9 @@
 {
     NSString *name;
     NSMutableArray *listItems;
-    NSInteger rowNum;
-    NSMutableArray *listItemObjects;
 }
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSMutableArray *listItems;
-@property (nonatomic, strong) NSMutableArray *listItemObjects;
-@property NSInteger rowNum;
-
 
 @end

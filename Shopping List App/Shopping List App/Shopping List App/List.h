@@ -16,9 +16,5 @@
 
 @interface List : UITableViewController
 {
-    ShoppingList *currentShoppingList;
-    NSInteger rowNum;
 }
-
-@property NSInteger rowNum;
 @end

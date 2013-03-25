@@ -13,12 +13,10 @@
     NSString *name;
     NSString *details;
     UIImage *image;
-    NSInteger rowNum;
 }
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *details;
 @property (nonatomic, strong) UIImage *image;
-@property NSInteger rowNum;
 
 @end

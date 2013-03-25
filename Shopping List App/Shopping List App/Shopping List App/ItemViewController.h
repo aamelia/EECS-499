@@ -17,11 +17,12 @@
 {
     Item *currentItem;
     UITextView *textDetails;
-    UIImageView * imageView;
-	UIButton * choosePhotoBtn;
-	UIButton * takePhotoBtn;
+    UIImageView *imageView;
+	UIButton *choosePhotoBtn;
+	UIButton *takePhotoBtn;
 }
 
+@property (retain, nonatomic) IBOutlet Item *currentItem;
 @property (retain, nonatomic) IBOutlet UITextView *textDetails;
 @property (retain, nonatomic) IBOutlet UIImageView *imageView;
 @property (retain, nonatomic) IBOutlet UIButton *choosePhotoBtn;

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NSMutableArray *allLists;
+int numLists;
+int currentListIndex;
+int currentItemIndex;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

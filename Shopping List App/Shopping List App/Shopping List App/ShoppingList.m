@@ -17,7 +17,6 @@
     
     name = [[NSString alloc] init];
     listItems = [[NSMutableArray alloc] init];
-    listItemObjects = [[NSMutableArray alloc] init];    
     return (self);
 }
 
