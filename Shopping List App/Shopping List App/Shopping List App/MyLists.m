@@ -41,7 +41,6 @@
 {
     if (buttonIndex == 1)
     {
-        NSLog(@"New List Name: %@",[[alertView textFieldAtIndex:0] text]);
         ShoppingList *newList = [[ShoppingList alloc] init];
         newList.name = [[alertView textFieldAtIndex:0] text];
         newList.listItems = [[NSMutableArray alloc] init];
@@ -73,7 +72,6 @@
         List *vc = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         currentListIndex = [myIndexPath row];
-        NSLog(@"MyList Index of selected shopping list is: %i", [myIndexPath row]);
     }
 }
 
@@ -131,7 +129,6 @@
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {
-        //NSLog(@"Inserting function");
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }

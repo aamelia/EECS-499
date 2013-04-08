@@ -28,21 +28,15 @@
     //Save details
     ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details = textDetails.text;
     
-    //((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex] = currentItem;
-
     //Save Image
-    
-    NSLog(@"Saving text: %@", textDetails.text);
-    
+    ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image = imageView.image;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    imageView.image = currentItem.image;
+    imageView.image = ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image;
     textDetails.text = ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details;
-    //textDetails.text = currentItem.name;
-    NSLog(@"ViewDidLoad ItemViewController: details = %@", ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details);
 
     
     textDetails.layer.borderWidth = 3.0f;

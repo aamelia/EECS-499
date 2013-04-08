@@ -39,7 +39,6 @@
     {
         Item *newItem = [[Item alloc] init];
         newItem.name = [[alertView textFieldAtIndex:0] text];
-        NSLog(@"New Item Name: %@",newItem.name);
         //Add the item to allLists
         [((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems) addObject: newItem];
         [self.tableView reloadData];
@@ -65,12 +64,9 @@
         ItemViewController *vc = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
-        Item *temp = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
-        NSLog(@"Temp.details = %@", temp.details);
         
         vc.currentItem = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
         currentItemIndex = row;
-        NSLog(@"List Index of selected shopping list is: %i", row);
     }
 }
 
