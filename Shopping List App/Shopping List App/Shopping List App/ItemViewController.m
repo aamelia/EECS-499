@@ -25,22 +25,26 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    //Save the image and the textField
-    int rowNum = 0;
     //Save details
-    ((Item *)((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects)).details = textDetails.text;
+    ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details = textDetails.text;
     
+    //((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex] = currentItem;
+
     //Save Image
-    ((Item *)((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects)).image = imageView.image;
+    
+    NSLog(@"Saving text: %@", textDetails.text);
     
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    int rowNum = 0;
-    imageView.image = ((Item *)((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects)).image;
-    textDetails.text = ((Item *)((NSMutableArray *)((ShoppingList *)allLists[rowNum]).listItemObjects)).details;
+    imageView.image = currentItem.image;
+    textDetails.text = ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details;
+    //textDetails.text = currentItem.name;
+    NSLog(@"ViewDidLoad ItemViewController: details = %@", ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details);
+
+    
     textDetails.layer.borderWidth = 3.0f;
     textDetails.layer.borderColor = [[UIColor purpleColor] CGColor];
     textDetails.layer.cornerRadius = 8;

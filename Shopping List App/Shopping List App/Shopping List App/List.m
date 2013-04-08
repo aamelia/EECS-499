@@ -60,11 +60,14 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ShowItem"])
+    if ([[segue identifier] isEqualToString:@"showItem"])
     {
         ItemViewController *vc = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
+        Item *temp = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
+        NSLog(@"Temp.details = %@", temp.details);
+        
         vc.currentItem = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
         currentItemIndex = row;
         NSLog(@"List Index of selected shopping list is: %i", row);
@@ -99,7 +102,9 @@
     
     //Configure the cell
     int row = [indexPath row];
-    cell.itemName.text = ((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems)[row];
+    Item *temp = ((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems)[row];
+        
+    cell.itemName.text = temp.name;
     
     return cell;
 }

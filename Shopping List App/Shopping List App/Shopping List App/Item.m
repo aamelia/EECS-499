@@ -10,7 +10,6 @@
 
 @implementation Item
 @synthesize image, details, name;
-@synthesize rowNum;
 
 - (id)init
 {
@@ -20,7 +19,7 @@
     name = [[NSString alloc] init];
     details = [[NSString alloc] init];
     name = @"Test name - Change in Item.m";
-    details = @"Test Details - Change in Item.m";
+    details = @"Enter item details here";
     return (self);
 }
 
