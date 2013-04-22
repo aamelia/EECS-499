@@ -12,7 +12,7 @@
 @end
 
 @implementation ItemViewController
-@synthesize imageView,choosePhotoBtn,takePhotoBtn, textDetails;
+@synthesize imageView,choosePhotoBtn,takePhotoBtn, textDetails, title;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,9 +39,16 @@
     textDetails.text = ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details;
 
     
-    textDetails.layer.borderWidth = 3.0f;
+    textDetails.layer.borderWidth = 2.0f;
     textDetails.layer.borderColor = [[UIColor purpleColor] CGColor];
     textDetails.layer.cornerRadius = 8;
+    
+    imageView.layer.borderWidth = 2.0f;
+    imageView.layer.borderColor = [[UIColor purpleColor] CGColor];
+    imageView.layer.cornerRadius = 8;
+    
+    title.layer.cornerRadius = 8;
+    
 }
 
 - (void)didReceiveMemoryWarning

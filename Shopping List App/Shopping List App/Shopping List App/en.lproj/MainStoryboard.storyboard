@@ -163,11 +163,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSM-p2-1L3">
+                                <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="b2M-JX-CKN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3US-mj-G1Y">
@@ -236,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="IkB-rn-ZMi" secondAttribute="bottom" constant="31" id="0JU-5L-wVg"/>
                             <constraint firstItem="gnQ-Tw-d1U" firstAttribute="top" secondItem="IkB-rn-ZMi" secondAttribute="top" type="default" id="39i-mX-O6o"/>
@@ -262,6 +263,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="nDe-UV-8eZ"/>
                     <connections>
+                        <outlet property="Title" destination="dSM-p2-1L3" id="jB3-O3-I8x"/>
                         <outlet property="choosePhotoBtn" destination="IkB-rn-ZMi" id="Hx7-eu-wuA"/>
                         <outlet property="imageView" destination="oLa-jK-k7y" id="dsD-AU-rHS"/>
                         <outlet property="takePhotoBtn" destination="gnQ-Tw-d1U" id="5xs-Db-Otv"/>
@@ -291,6 +293,54 @@
             <point key="canvasLocation" x="-341" y="155"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="Item" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Item.h"/>
+        </class>
+        <class className="ItemViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouched:"/>
+                <relationship kind="action" name="getPhoto:"/>
+                <relationship kind="action" name="textFieldReturn:"/>
+                <relationship kind="outlet" name="choosePhotoBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="currentItem" candidateClass="Item"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="takePhotoBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="textDetails" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="List" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/List.h"/>
+        </class>
+        <class className="ListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="itemName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MyLists" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLists.h"/>
+        </class>
+        <class className="MyListsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyListsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="listName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="Welcome" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Welcome.h"/>
+            <relationships>
+                <relationship kind="action" name="showDefault:"/>
+                <relationship kind="outlet" name="addListButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="myListsButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

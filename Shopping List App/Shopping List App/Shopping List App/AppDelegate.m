@@ -7,6 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "ListDatabase.h"
+
+// Comment out the code to load the sample ScaryBugDoc data in the beginning of application:didFinishLaunchingWithOptions, and replace it with the following:
+NSMutableArray *loadedLists = [ListDatabase loadListDocs];
+RootViewController *rootController = (RootViewController *) [navigationController.viewControllers objectAtIndex:0];
+rootController.bugs = loadedBugs;
+
+
+
+
+
+
 
 @implementation AppDelegate
 

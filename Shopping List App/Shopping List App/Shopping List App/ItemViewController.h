@@ -21,6 +21,7 @@
 	UIButton *choosePhotoBtn;
 	UIButton *takePhotoBtn;
 }
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 @property (retain, nonatomic) IBOutlet Item *currentItem;
 @property (retain, nonatomic) IBOutlet UITextView *textDetails;
