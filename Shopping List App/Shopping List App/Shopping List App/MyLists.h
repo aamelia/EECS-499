@@ -11,14 +11,15 @@
 #import "ShoppingList.h"
 #import "MyListsCell.h"
 #import "List.h"
+#import "ListDoc.h"
+#import "ListData.h"
+
 
 @interface MyLists : UITableViewController
 {
-    //NSMutableArray *allLists;
     NSString *currentlyAdding;
 }
 
-//@property(nonatomic,retain)NSMutableArray *allLists;
 @property (nonatomic, strong) NSString *currentlyAdding;
 @property (nonatomic, assign) BOOL *newItemToAdd;
 

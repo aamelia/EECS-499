@@ -2,7 +2,17 @@
 
 @implementation ListData
 
-@synthesize title = _title;
+//@synthesize title = _title;
+
+- (id)init
+{
+	if (!(self = [super init]))
+		return nil;
+    
+    title = [[NSString alloc] init];
+    list = [[NSMutableArray alloc] init];
+    return (self);
+}
 
 - (id)initWithTitle:(NSString*)title list:(NSMutableArray*)list
 {
@@ -10,6 +20,7 @@
     {
         self.title = title;
     }
+    
     return self;
 }
 

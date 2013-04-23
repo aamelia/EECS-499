@@ -74,7 +74,7 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="List Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ks1-n1-MkH">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="FAC-8B-1zW"/>
+                                                <constraint firstAttribute="height" constant="43" id="er6-QH-q8M"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -85,8 +85,8 @@
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ks1-n1-MkH" secondAttribute="trailing" constant="20" type="default" id="7K1-49-cHR"/>
+                                    <constraint firstItem="ks1-n1-MkH" firstAttribute="top" secondItem="roe-aa-S2w" secondAttribute="top" type="default" id="LhV-fi-g5l"/>
                                     <constraint firstItem="ks1-n1-MkH" firstAttribute="leading" secondItem="roe-aa-S2w" secondAttribute="leading" constant="20" type="default" id="Qfc-6f-NJS"/>
-                                    <constraint firstItem="ks1-n1-MkH" firstAttribute="top" secondItem="roe-aa-S2w" secondAttribute="top" constant="11" id="seZ-Ua-tGb"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="listName" destination="ks1-n1-MkH" id="DgG-09-afT"/>
@@ -123,7 +123,7 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="273" translatesAutoresizingMaskIntoConstraints="NO" id="KNM-wm-vze">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="36" id="UwA-8J-ZSF"/>
+                                                <constraint firstAttribute="height" constant="43" id="7B9-ex-dWL"/>
                                                 <constraint firstAttribute="width" constant="273" id="xaS-ZK-2PO"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
@@ -237,7 +237,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="IkB-rn-ZMi" secondAttribute="bottom" constant="31" id="0JU-5L-wVg"/>
                             <constraint firstItem="gnQ-Tw-d1U" firstAttribute="top" secondItem="IkB-rn-ZMi" secondAttribute="top" type="default" id="39i-mX-O6o"/>

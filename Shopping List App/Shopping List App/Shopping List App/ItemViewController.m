@@ -25,18 +25,20 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    //Save details
-    ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details = textDetails.text;
+    //Save Details
+    ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).details = textDetails.text;
+    
+    ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).image = imageView.image;
     
     //Save Image
-    ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image = imageView.image;
+    //((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image = imageView.image;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    imageView.image = ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image;
-    textDetails.text = ((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).details;
+    imageView.image = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).image;
+    textDetails.text = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).details;
 
     
     textDetails.layer.borderWidth = 2.0f;

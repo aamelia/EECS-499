@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "Item.h"
 #import "ShoppingList.h"
+#import "ListData.h"
+#import "ListDoc.h"
 
 //@interface ItemViewController : UIViewController
 @interface ItemViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>

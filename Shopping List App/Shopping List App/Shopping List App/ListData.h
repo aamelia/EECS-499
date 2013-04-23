@@ -2,15 +2,14 @@
 
 @interface ListData : NSObject <NSCoding>
 {
-    NSString *_title;
-    NSMutableArray *_list;
+    NSString *title;
+    NSMutableArray *list;
 }
 
 
-@property (strong) NSString *title;
-@property (strong) NSMutableArray *list;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSMutableArray *list;
 
 - (id)initWithTitle:(NSString*)title list:(NSMutableArray*)list;
-//- (id)initWithTitle:(NSString*)title rating:(float)rating;
 
 @end

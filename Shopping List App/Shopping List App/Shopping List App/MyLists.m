@@ -41,10 +41,12 @@
 {
     if (buttonIndex == 1)
     {
-        ShoppingList *newList = [[ShoppingList alloc] init];
-        newList.name = [[alertView textFieldAtIndex:0] text];
-        newList.listItems = [[NSMutableArray alloc] init];
-        [allLists addObject: newList];
+        ListDoc *newDoc = [[ListDoc alloc] init];
+        newDoc.data.title = [[alertView textFieldAtIndex:0] text];
+        newDoc.data.list = [[NSMutableArray alloc] init];
+        [allLists addObject: newDoc];
+        [newDoc saveData];
+        
         numLists ++;
         [self.tableView reloadData];
     }
@@ -102,10 +104,20 @@
     
     //Configure the cell
     
-    int row = [indexPath row];
-    ShoppingList *temp = allLists[row];
-    cell.listName.text = temp.name;
+    /*
+     This is from Scary Bugs
+    ScaryBugDoc *doc = [_bugs objectAtIndex:indexPath.row];
+    cell.textLabel.text = doc.data.title;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.imageView.image = doc.thumbImage;
+    */
     
+    int row = [indexPath row];
+    ListDoc *doc = [allLists objectAtIndex:indexPath.row];
+    
+    //ShoppingList *temp = allLists[row];
+    //cell.listName.text = temp.name;
+    cell.listName.text = doc.data.title;
     return cell;
 }
 

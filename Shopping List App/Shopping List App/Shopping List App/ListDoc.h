@@ -4,11 +4,11 @@
 
 @interface ListDoc : NSObject
 {
-        ListData *_data;
-        NSString *_docPath;
+        ListData *data;
+        NSString *docPath;
 }
 
-@property (strong) ListData *data;
+@property (nonatomic, strong) ListData *data;
 @property (copy) NSString *docPath;
 
 - (id)init;

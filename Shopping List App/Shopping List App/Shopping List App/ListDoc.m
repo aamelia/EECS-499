@@ -7,18 +7,20 @@
 #define kDataFile       @"data.plist"
 
 @implementation ListDoc
-@synthesize data = _data;
-@synthesize docPath = _docPath;
+@synthesize data;
+@synthesize docPath;
 
 - (id)init {
     if ((self = [super init])) {
     }
+    data = [[ListData alloc] init];
+
     return self;
 }
 
 - (id)initWithDocPath:(NSString *)docPath {
     if ((self = [super init])) {
-        _docPath = [docPath copy];
+        docPath = [docPath copy];
     }
     return self;
 }
@@ -26,25 +28,27 @@
 - (id)initWithTitle:(NSString*)title list:(NSMutableArray*)list
 {
     if ((self = [super init])) {
-        _data = [[ListData alloc] initWithTitle:title list:list];
+        data = [[ListData alloc] init];
+        data.title = title;
+        data.list = list;
     }
     return self;
 }
 
 - (void)dealloc
 {
-    _data = nil;
-    _docPath = nil;
+    data = nil;
+    docPath = nil;
 }
 
 - (BOOL)createDataPath {
     
-    if (_docPath == nil) {
+    if (docPath == nil) {
         self.docPath = [ListDatabase nextListDocPath];
     }
     
     NSError *error;
-    BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:_docPath withIntermediateDirectories:YES attributes:nil error:&error];
+    BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:docPath withIntermediateDirectories:YES attributes:nil error:&error];
     if (!success) {
         NSLog(@"Error creating data path: %@", [error localizedDescription]);
     }
@@ -52,30 +56,32 @@
     
 }
 
-- (ListData *)data {
+- (ListData *)data
+{
     
-    if (_data != nil) return _data;
+    if (data != nil) return data;
     
-    NSString *dataPath = [_docPath stringByAppendingPathComponent:kDataFile];
+    NSString *dataPath = [docPath stringByAppendingPathComponent:kDataFile];
     NSData *codedData = [[NSData alloc] initWithContentsOfFile:dataPath];
     if (codedData == nil) return nil;
     
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:codedData];
-    _data = [unarchiver decodeObjectForKey:kDataKey];
+    data = [unarchiver decodeObjectForKey:kDataKey];
     [unarchiver finishDecoding];    
-    return _data;
+    return data;
 }
 
-- (void)saveData {
+- (void)saveData
+{
     
-    if (_data == nil) return;
+    if (data == nil) return;
     
     [self createDataPath];
     
-    NSString *dataPath = [_docPath stringByAppendingPathComponent:kDataFile];
+    NSString *dataPath = [docPath stringByAppendingPathComponent:kDataFile];
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    [archiver encodeObject:_data forKey:kDataKey];
+    [archiver encodeObject:data forKey:kDataKey];
     [archiver finishEncoding];
     [data writeToFile:dataPath atomically:YES];
 }
@@ -83,22 +89,23 @@
 - (void)deleteDoc {
     
     NSError *error;
-    BOOL success = [[NSFileManager defaultManager] removeItemAtPath:_docPath error:&error];
-    if (!success) {
+    BOOL success = [[NSFileManager defaultManager] removeItemAtPath:docPath error:&error];
+    if (!success)
+    {
         NSLog(@"Error removing document path: %@", error.localizedDescription);
     }
     
 }
 
 - (NSString *)getExportFileName {
-    NSString *fileName = _data.title;
+    NSString *fileName = data.title;
     NSString *zippedName = [fileName stringByAppendingString:@".sbz"];
     return zippedName;
 }
 
 - (NSData *)exportToNSData {
     NSError *error;
-    NSURL *url = [NSURL fileURLWithPath:_docPath];
+    NSURL *url = [NSURL fileURLWithPath:docPath];
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initWithURL:url options:0 error:&error];
     if (dirWrapper == nil) {
         NSLog(@"Error creating directory wrapper: %@", error.localizedDescription);

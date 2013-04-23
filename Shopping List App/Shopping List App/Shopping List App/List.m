@@ -19,6 +19,8 @@
     if (self) {
         // Custom initialization
     }
+    NSLog(@"The title is: %@", listDoc.data.title);
+    
     return self;
 }
 
@@ -39,15 +41,18 @@
     {
         Item *newItem = [[Item alloc] init];
         newItem.name = [[alertView textFieldAtIndex:0] text];
+        
         //Add the item to allLists
-        [((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems) addObject: newItem];
+        //[((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems) addObject: newItem];
+        [((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list) addObject:newItem];
+        
         [self.tableView reloadData];
     }
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.navigationItem.title = ((ShoppingList *)allLists[currentListIndex]).name;
+    self.navigationItem.title = ((ListData*)((ListDoc*)allLists[currentListIndex]).data).title;
 }
 
 - (void)viewDidLoad
@@ -65,7 +70,7 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
         
-        vc.currentItem = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
+        //vc.currentItem = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
         currentItemIndex = row;
     }
 }
@@ -88,7 +93,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return ((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems).count;
+    return ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list).count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,7 +103,7 @@
     
     //Configure the cell
     int row = [indexPath row];
-    Item *temp = ((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems)[row];
+    Item *temp = ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[row];
         
     cell.itemName.text = temp.name;
     

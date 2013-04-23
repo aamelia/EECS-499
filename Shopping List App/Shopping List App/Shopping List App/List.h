@@ -13,8 +13,17 @@
 #import "AppDelegate.h"
 #import "Item.h"
 #import "ItemViewController.h"//;
+#import "ListData.h"
+#import "ListDoc.h"
+
+@class ListData;
+@class ListDoc;
 
 @interface List : UITableViewController
 {
+    ListDoc *listDoc;
 }
+
+@property (nonatomic, retain) ListDoc *listDoc;
+
 @end
