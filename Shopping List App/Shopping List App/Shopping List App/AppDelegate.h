@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
-
+#import "ListData.h"
+#import "ListDoc.h"
+#import "Item.h"
 
 NSMutableArray *allLists;
 int numLists;

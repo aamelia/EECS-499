@@ -27,6 +27,15 @@
     NSLog(@"The size of loadedLists is: %i", loadedLists.count);
     allLists = loadedLists;
     
+    if(allLists.count >0)
+    {
+        //NSString *temp = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[0]).data).list)[0]).name;
+        ListData *data = ((ListDoc*)allLists[0]).data;
+        NSString *temp2 = ((ListDoc*)allLists[0]).docPath;
+        NSLog(@"allLists[0].docPath = %@", temp2);
+        //NSLog(@"The title of the first list is: %@", temp);
+    }
+    
     //NSURL *url = (NSURL *)[launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
     //if (url != nil && [url isFileURL]) {
     //    [rootController handleOpenURL:url];

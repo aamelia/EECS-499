@@ -1,8 +1,9 @@
 #import <Foundation/Foundation.h>
+#import "Item.h"
 
 @class ListData;
 
-@interface ListDoc : NSObject
+@interface ListDoc : NSObject <NSCoding> 
 {
         ListData *data;
         NSString *docPath;

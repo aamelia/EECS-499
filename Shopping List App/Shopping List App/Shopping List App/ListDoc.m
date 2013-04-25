@@ -79,11 +79,13 @@
     [self createDataPath];
     
     NSString *dataPath = [docPath stringByAppendingPathComponent:kDataFile];
-    NSMutableData *data = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    NSMutableData *localData = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:localData];
     [archiver encodeObject:data forKey:kDataKey];
     [archiver finishEncoding];
-    [data writeToFile:dataPath atomically:YES];
+    [localData writeToFile:dataPath atomically:YES];
+    NSLog(@"save DataPath = %@", dataPath);
+    NSLog(@"data.title = %@", data.title);
 }
 
 - (void)deleteDoc {
