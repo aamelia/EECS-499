@@ -30,8 +30,8 @@
     
     ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).image = imageView.image;
     
-    //Save Image
-    //((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image = imageView.image;
+    //[_listDoc saveData];
+
 }
 
 - (void)viewDidLoad

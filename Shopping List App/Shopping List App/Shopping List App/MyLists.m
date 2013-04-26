@@ -57,13 +57,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     //This method is called each time you see this view on the screen
-    
-    //should save each list each time you visit the home screen
-    for(int i=0; i<allLists.count; i++)
-    {
-        ListDoc *doc = [allLists objectAtIndex:i];
-        //[doc saveData];
-    }
+
 }
 
 - (void)viewDidLoad
@@ -83,13 +77,28 @@
         List *vc = [segue destinationViewController];
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         currentListIndex = [myIndexPath row];
+        vc.listDoc = allLists[[myIndexPath row]];
     }
+}
+
+- (void)handleOpenURL:(NSURL *)url
+{
+    ListDoc *newDoc = [[ListDoc alloc] init];
+    if ([newDoc importFromURL:url])
+    {
+        [self addNewDoc:newDoc];
+    }
+}
+
+- (void)addNewDoc:(ListDoc *)newDoc
+{
+    [allLists addObject:newDoc];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

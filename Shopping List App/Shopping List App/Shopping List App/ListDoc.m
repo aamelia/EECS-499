@@ -13,7 +13,6 @@
 - (id)init {
     if ((self = [super init]))
     {
-        NSLog(@"In this init function");
         _data = [[ListData alloc] init];
     }
     return self;
@@ -104,6 +103,8 @@
 - (NSData *)exportToNSData
 {
     NSError *error;
+    NSLog(@"you are here");
+
     NSURL *url = [NSURL fileURLWithPath:_docPath];
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initWithURL:url options:0 error:&error];
     if (dirWrapper == nil)

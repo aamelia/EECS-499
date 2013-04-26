@@ -7,12 +7,16 @@
 //
 
 #import "List.h"
+#import <MessageUI/MessageUI.h>
 
 @interface List ()
 @end
 
 @implementation List
 @synthesize listDoc = _listDoc;
+@synthesize picker = _picker;
+@synthesize activityView = _activityView;
+@synthesize queue = _queue;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -21,6 +25,11 @@
         // Custom initialization
     }    
     return self;
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    //[_listDoc saveData];
 }
 
 - (IBAction) showMessage
@@ -41,15 +50,12 @@
         Item *newItem = [[Item alloc] init];
         newItem.name = [[alertView textFieldAtIndex:0] text];
         NSLog(@"Made it to here");
+        [_listDoc.data.items addObject:newItem];
+        //[_listDoc saveData];
         
         //Add the item to allLists
-        NSLog(@"currentListIndex = %i", currentListIndex);
-
-        int counter;
-        counter = ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items).count;
-        NSLog(@"Counter = %i", counter);
+        //[((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items) addObject:newItem];
         
-        [((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items) addObject:newItem];
         NSLog(@"Made it to here");
 
         [self.tableView reloadData];
@@ -65,7 +71,54 @@
 {
     [super viewDidLoad];
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
-    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    UIBarButtonItem *exportButton = [[UIBarButtonItem alloc] initWithTitle:@"Export List" style: UIBarButtonItemStyleDone target:self action:@selector(exportMethod:)];
+    
+    NSArray *myButtonsArray = [[NSArray alloc] initWithObjects:rightButton, exportButton, nil];
+    
+    self.navigationItem.rightBarButtonItems = myButtonsArray;
+
+}
+
+- (void)exportMethod:(id)sender
+{
+     UIActionSheet *actionSheet = [[UIActionSheet alloc]
+     initWithTitle:@""
+     delegate:self
+     cancelButtonTitle:@"Cancel"
+     destructiveButtonTitle:nil
+     otherButtonTitles:@"Export via Email", nil];
+     [actionSheet showInView:self.view];
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == actionSheet.firstOtherButtonIndex + 0)
+    {
+        [DSBezelActivityView newActivityViewForView:self.navigationController.navigationBar.superview withLabel:@"Exporting List..." width:160];
+        /**************/
+        NSData *bugData = [_listDoc exportToNSData];
+        [DSBezelActivityView removeViewAnimated:YES];
+        if (bugData != nil)
+        {
+            MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+            [picker setSubject:@"My List"];
+            [picker addAttachmentData:bugData mimeType:@"application/lists" fileName:[_listDoc getExportFileName]];
+            [picker setToRecipients:[NSArray array]];
+            [picker setMessageBody:@"Check out this shopping list!  You'll need a copy of ScaryBugs to view this file, then tap and hold to open." isHTML:NO];
+            [picker setMailComposeDelegate:self];
+            [self presentModalViewController:picker animated:YES];
+        }
+        /**************/
+        
+    }
+    
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+		  didFinishWithResult:(MFMailComposeResult)result
+						error:(NSError *)error
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -23,4 +23,6 @@
 @property (nonatomic, strong) NSString *currentlyAdding;
 @property (nonatomic, assign) BOOL *newItemToAdd;
 
+- (void)handleOpenURL:(NSURL *)url;
+
 @end

@@ -15,15 +15,23 @@
 #import "ItemViewController.h"//;
 #import "ListData.h"
 #import "ListDoc.h"
+#import "DSActivityView.h"
 
-@class ListData;
-@class ListDoc;
+#import <MessageUI/MessageUI.h>
 
-@interface List : UITableViewController
+@interface List : UITableViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, MFMailComposeViewControllerDelegate>
 {
     ListDoc *_listDoc;
+    UIImagePickerController *_picker;
+    DSActivityView *_activityView;
+    NSOperationQueue *_queue;
 }
 
 @property (nonatomic, retain) ListDoc *listDoc;
+@property (retain) UIImagePickerController *picker;
+@property (retain) DSActivityView *activityView;
+@property (retain) NSOperationQueue *queue;
+
+- (IBAction)exportMethod:(id)sender;
 
 @end

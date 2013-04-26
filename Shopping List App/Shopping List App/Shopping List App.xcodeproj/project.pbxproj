@@ -36,6 +36,8 @@
 		A5CB252B171EF71F00A720A5 /* ListData.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB252A171EF71F00A720A5 /* ListData.m */; };
 		A5CB252E171EF78400A720A5 /* ListDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB252D171EF78400A720A5 /* ListDoc.m */; };
 		A5CB25311721D2C900A720A5 /* ListDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB25301721D2C900A720A5 /* ListDatabase.m */; };
+		A5CB2540172A2D8200A720A5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CB253F172A2D8100A720A5 /* MessageUI.framework */; };
+		A5CB2543172A2E1D00A720A5 /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB2542172A2E1D00A720A5 /* DSActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,9 @@
 		A5CB252D171EF78400A720A5 /* ListDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDoc.m; sourceTree = "<group>"; };
 		A5CB252F1721D2C900A720A5 /* ListDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListDatabase.h; sourceTree = "<group>"; };
 		A5CB25301721D2C900A720A5 /* ListDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListDatabase.m; sourceTree = "<group>"; };
+		A5CB253F172A2D8100A720A5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A5CB2541172A2E1D00A720A5 /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
+		A5CB2542172A2E1D00A720A5 /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CB2540172A2D8200A720A5 /* MessageUI.framework in Frameworks */,
 				A542F55A16FB810300B3E793 /* QuartzCore.framework in Frameworks */,
 				A56D1D6216E7EAC6008B3C9D /* UIKit.framework in Frameworks */,
 				A56D1D6416E7EAC6008B3C9D /* Foundation.framework in Frameworks */,
@@ -125,6 +131,7 @@
 		A56D1D5516E7EAC6008B3C9D = {
 			isa = PBXGroup;
 			children = (
+				A5CB253F172A2D8100A720A5 /* MessageUI.framework */,
 				A542F55916FB810300B3E793 /* QuartzCore.framework */,
 				A56D1D6716E7EAC6008B3C9D /* Shopping List App */,
 				A56D1D8B16E7EAC6008B3C9D /* Shopping List AppTests */,
@@ -206,6 +213,7 @@
 		A56D1DAB16E7ECE6008B3C9D /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5CB2541172A2E1D00A720A5 /* DSActivityView.h */,
 				A56D1DAE16E7F698008B3C9D /* MyListsCell.h */,
 				A56D1DBE16E80368008B3C9D /* ShoppingList.h */,
 				A56D1DB116E7F6A3008B3C9D /* ListCell.h */,
@@ -222,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				A56D1DA016E7ECA6008B3C9D /* List.m */,
+				A5CB2542172A2E1D00A720A5 /* DSActivityView.m */,
 				A56D1DAF16E7F698008B3C9D /* MyListsCell.m */,
 				A56D1DB216E7F6A3008B3C9D /* ListCell.m */,
 				A56D1DA316E7ECBD008B3C9D /* Welcome.m */,
@@ -371,6 +380,7 @@
 				A5CB252B171EF71F00A720A5 /* ListData.m in Sources */,
 				A5CB252E171EF78400A720A5 /* ListDoc.m in Sources */,
 				A5CB25311721D2C900A720A5 /* ListDatabase.m in Sources */,
+				A5CB2543172A2E1D00A720A5 /* DSActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,17 +24,35 @@
     NSMutableArray *loadedLists = [ListDatabase loadListDocs];
     //NSLog(@"The size of loadedLists is: %i", loadedLists.count);
     allLists = loadedLists;
-    
-    if(allLists.count >0)
-    {
-        //NSString *temp = ((ListData*)((ListDoc*)allLists[0]).data).title;
-        //ListData *data = ((ListDoc*)allLists[0]).data;
-        //NSString *temp2 = ((ListDoc*)allLists[0]).docPath;
-        //NSLog(@"allLists[0].docPath = %@", temp2);
-        //NSLog(@"The title of the first list is: %@", temp);
-    }
+
     return YES;
+    
+    NSURL *url = (NSURL *)[launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
+    if (url != nil && [url isFileURL])
+    {
+        [self handleOpenURL:url];
+    }
 }
+
+
+//-(BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url
+- (void)handleOpenURL:(NSURL *)url
+{
+    
+    //RootViewController *rootController = (RootViewController *) [navigationController.viewControllers objectAtIndex:0];
+    if (url != nil && [url isFileURL])
+    {
+        //[rootController handleOpenURL:url];
+        ListDoc *newDoc = [[ListDoc alloc] init];
+        if ([newDoc importFromURL:url])
+        {
+            [allLists addObject:newDoc];
+        }
+    }
+    //return YES;
+ 
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
