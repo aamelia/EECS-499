@@ -27,11 +27,7 @@
 {
     //Save Details
     ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).details = textDetails.text;
-    
     ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).image = imageView.image;
-    
-    //[_listDoc saveData];
-
 }
 
 - (void)viewDidLoad
@@ -50,7 +46,6 @@
     imageView.layer.cornerRadius = 8;
     
     title.layer.cornerRadius = 8;
-    
 }
 
 - (void)didReceiveMemoryWarning

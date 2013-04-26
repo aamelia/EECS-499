@@ -103,8 +103,6 @@
 - (NSData *)exportToNSData
 {
     NSError *error;
-    NSLog(@"you are here");
-
     NSURL *url = [NSURL fileURLWithPath:_docPath];
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initWithURL:url options:0 error:&error];
     if (dirWrapper == nil)

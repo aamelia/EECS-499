@@ -23,4 +23,33 @@
     return (self);
 }
 
+- (id)initWithName:(NSString*)nName details:(NSString*)nDetails
+{
+    if ((self = [super init]))
+    {
+        name = nName;
+        details = nDetails;
+    }
+    return self;
+}
+
+
+#define knameKey        @"Name"
+#define kdetailsKey     @"Details"
+
+- (void) encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:name forKey:knameKey];
+    [encoder encodeObject:details forKey:kdetailsKey];
+    
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    NSString *name = [decoder decodeObjectForKey:knameKey];
+    NSString *details = [decoder decodeObjectForKey:kdetailsKey];
+    return [self initWithName:name details:details];
+}
+
+
 @end

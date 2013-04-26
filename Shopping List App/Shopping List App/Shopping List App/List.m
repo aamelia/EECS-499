@@ -29,7 +29,7 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    //[_listDoc saveData];
+    [_listDoc saveData];
 }
 
 - (IBAction) showMessage
@@ -49,15 +49,12 @@
     {
         Item *newItem = [[Item alloc] init];
         newItem.name = [[alertView textFieldAtIndex:0] text];
-        NSLog(@"Made it to here");
         [_listDoc.data.items addObject:newItem];
         //[_listDoc saveData];
         
         //Add the item to allLists
         //[((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items) addObject:newItem];
         
-        NSLog(@"Made it to here");
-
         [self.tableView reloadData];
     }
 }
@@ -129,7 +126,7 @@
         NSIndexPath *myIndexPath = [self.tableView indexPathForSelectedRow];
         int row = [myIndexPath row];
         
-        //vc.currentItem = ((ShoppingList *)allLists[currentListIndex]).listItems[row];
+        vc.currentItem = _listDoc.data.items[row];
         currentItemIndex = row;
     }
 }

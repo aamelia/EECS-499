@@ -57,7 +57,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     //This method is called each time you see this view on the screen
-
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad
@@ -83,6 +83,7 @@
 
 - (void)handleOpenURL:(NSURL *)url
 {
+    [[self navigationController] popToRootViewControllerAnimated:YES];
     ListDoc *newDoc = [[ListDoc alloc] init];
     if ([newDoc importFromURL:url])
     {
@@ -93,7 +94,7 @@
 - (void)addNewDoc:(ListDoc *)newDoc
 {
     [allLists addObject:newDoc];
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -121,16 +122,6 @@
     static NSString *CellIdentifier = @"MyListsCell";
     MyListsCell *cell = [tableView dequeueReusableCellWithIdentifier: CellIdentifier forIndexPath: indexPath];
     
-    //Configure the cell
-    
-    /*
-     This is from Scary Bugs
-    ScaryBugDoc *doc = [_bugs objectAtIndex:indexPath.row];
-    cell.textLabel.text = doc.data.title;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.imageView.image = doc.thumbImage;
-    */
-    
     int row = [indexPath row];
     ListDoc *doc = [allLists objectAtIndex:indexPath.row];
     
@@ -153,8 +144,11 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         // Delete the row from the data source
+        ListDoc *temp = allLists[indexPath.row];
+        [temp deleteDoc];
         [allLists removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   

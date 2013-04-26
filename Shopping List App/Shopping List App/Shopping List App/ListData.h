@@ -1,7 +1,9 @@
 
 #import <Foundation/Foundation.h>
+#import "Item.h"
 
-@interface ListData : NSObject <NSCoding> {
+@interface ListData : NSObject <NSCoding>
+{
     NSString *_title;
     NSMutableArray *_items;
 }

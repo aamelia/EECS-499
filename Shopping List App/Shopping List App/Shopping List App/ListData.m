@@ -34,6 +34,7 @@
 {
     [encoder encodeObject:_title forKey:kTitleKey];
     [encoder encodeObject:_items forKey:kItemsKey];
+
 }
 
 - (id)initWithCoder:(NSCoder *)decoder

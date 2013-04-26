@@ -49,7 +49,7 @@
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.atkinson.lists.sbz</string>
+				<string>com.atkinson.sbz</string>
 			</array>
 		</dict>
 	</array>
@@ -57,10 +57,10 @@
 	<array>
 		<dict>
 			<key>UTTypeIdentifier</key>
-			<string>com.atkinson.lists.sbz</string>
+			<string>com.atkinson.sbz</string>
 			<key>UTTypeDescription</key>
-			<string>List Document</string>
-			<key>Type Tag Specification</key>
+			<string>ListDocument</string>
+			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<string>sbz</string>
@@ -73,7 +73,7 @@
 			</array>
 		</dict>
 	</array>
-	<key>UIMainStoryboardFile</key>
+    <key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>

@@ -1,61 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Xat-Ks-K3q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="v8X-8a-zmf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Welcome-->
-        <scene sceneID="Clf-f9-Zva">
-            <objects>
-                <viewController id="4bp-BF-PRc" customClass="Welcome" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1EA-vR-S69">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnf-7z-QWo">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="ROO-6V-REA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="27"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n0J-tM-ai9">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="Qu5-md-X5T"/>
-                                    <constraint firstAttribute="height" constant="43" id="gDd-gu-OJl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="19"/>
-                                <state key="normal" title="My Lists">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="MeT-8W-1n6" kind="push" id="cBD-AG-iUK"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="n0J-tM-ai9" firstAttribute="centerX" secondItem="vnf-7z-QWo" secondAttribute="centerX" type="default" id="28k-PA-sQP"/>
-                            <constraint firstAttribute="trailing" secondItem="vnf-7z-QWo" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SaS-OY-kZV"/>
-                            <constraint firstItem="vnf-7z-QWo" firstAttribute="top" secondItem="1EA-vR-S69" secondAttribute="top" constant="60" id="nND-1m-5vy"/>
-                            <constraint firstItem="vnf-7z-QWo" firstAttribute="leading" secondItem="1EA-vR-S69" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ryI-tV-0MK"/>
-                            <constraint firstAttribute="bottom" secondItem="n0J-tM-ai9" secondAttribute="bottom" constant="75" id="yv9-W6-h4u"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="UHq-8p-Tpu"/>
-                    <connections>
-                        <outlet property="myListsButton" destination="n0J-tM-ai9" id="R75-SH-7rM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dc4-Rn-tWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="185" y="155"/>
-        </scene>
         <!--My Lists - My Lists-->
         <scene sceneID="bKZ-21-518">
             <objects>
@@ -103,7 +51,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQg-ID-9lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="155"/>
+            <point key="canvasLocation" x="1370" y="155"/>
         </scene>
         <!--List-->
         <scene sceneID="zXJ-83-Ah8">
@@ -152,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8H-bX-asQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="155"/>
+            <point key="canvasLocation" x="1820" y="155"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="sMB-qq-ART">
@@ -272,27 +220,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRC-MX-QSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="155"/>
+            <point key="canvasLocation" x="2229" y="155"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="oef-FY-Guc">
+        <scene sceneID="jMu-SC-7n7">
             <objects>
-                <navigationController id="Xat-Ks-K3q" sceneMemberID="viewController">
+                <navigationController id="v8X-8a-zmf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pUH-4V-1yh">
+                    <navigationItem key="navigationItem" id="0oi-NX-fQi"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ec5-Y3-LPg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="4bp-BF-PRc" kind="relationship" relationship="rootViewController" id="Odr-ks-34a"/>
+                        <segue destination="MeT-8W-1n6" kind="relationship" relationship="rootViewController" id="FIQ-Y8-77r"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QTM-Rh-SWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pDx-Pw-moP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-341" y="155"/>
+            <point key="canvasLocation" x="844" y="155"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="Item" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/Item.h"/>
+        </class>
+        <class className="ItemViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backgroundTouched:"/>
+                <relationship kind="action" name="getPhoto:"/>
+                <relationship kind="action" name="textFieldReturn:"/>
+                <relationship kind="outlet" name="choosePhotoBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="currentItem" candidateClass="Item"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="takePhotoBtn" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="textDetails" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="List" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/List.h"/>
+            <relationships>
+                <relationship kind="action" name="exportMethod:"/>
+            </relationships>
+        </class>
+        <class className="ListCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="itemName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MyLists" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLists.h"/>
+        </class>
+        <class className="MyListsCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyListsCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="listName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
