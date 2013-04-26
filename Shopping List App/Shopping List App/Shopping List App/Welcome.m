@@ -30,6 +30,12 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)passToMyLists:(NSURL *)url
+{
+    NSLog(@"passToMyLists");    
+    [[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

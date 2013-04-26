@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MyLists.h"
 
-@interface Welcome : UIViewController
+@interface Welcome : UIViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *addListButton;
 @property (weak, nonatomic) IBOutlet UIButton *myListsButton;
+
 - (IBAction)showDefault:(id)sender;
+- (void)passToMyLists:(NSURL *)url;
 
 @end

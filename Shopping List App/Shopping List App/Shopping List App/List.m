@@ -101,7 +101,7 @@
             [picker setSubject:@"My List"];
             [picker addAttachmentData:bugData mimeType:@"application/lists" fileName:[_listDoc getExportFileName]];
             [picker setToRecipients:[NSArray array]];
-            [picker setMessageBody:@"Check out this shopping list!  You'll need a copy of ScaryBugs to view this file, then tap and hold to open." isHTML:NO];
+            [picker setMessageBody:@"Check out this shopping list!  You'll need a copy of List Manager to view this file, then tap and hold to open." isHTML:NO];
             [picker setMailComposeDelegate:self];
             [self presentModalViewController:picker animated:YES];
         }

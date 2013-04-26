@@ -8,6 +8,7 @@
 
 #import "MyLists.h"
 #import "AppDelegate.h"
+#import "ListDatabase.h"
 
 @interface MyLists ()
 
@@ -68,7 +69,30 @@
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
     numLists = 0;
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.tintColor = [UIColor purpleColor];
+    [refreshControl addTarget:self action:@selector(updateTable) forControlEvents:UIControlEventValueChanged];
+
+    self.refreshControl = refreshControl;
 }
+
+- (void)changeSorting
+{
+    [self performSelector:@selector(updateTable) withObject:nil
+               afterDelay:1];
+}
+
+- (void)updateTable
+{
+    allLists = [[NSMutableArray alloc] init];
+    NSMutableArray *loadedLists = [ListDatabase loadListDocs];
+    allLists = loadedLists;
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+}
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -79,6 +103,14 @@
         currentListIndex = [myIndexPath row];
         vc.listDoc = allLists[[myIndexPath row]];
     }
+}
+
+- (IBAction)updateList
+{
+    allLists = [[NSMutableArray alloc] init];
+    NSMutableArray *loadedLists = [ListDatabase loadListDocs];
+    allLists = loadedLists;
+    [self.tableView reloadData];
 }
 
 - (void)handleOpenURL:(NSURL *)url

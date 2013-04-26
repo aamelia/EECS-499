@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="v8X-8a-zmf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gxP-du-3oc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Welcome-->
+        <scene sceneID="V4e-G0-0Il">
+            <objects>
+                <viewController id="iQ1-3R-mL1" customClass="Welcome" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jC2-J9-29T">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4op-K5-9uz">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="Yvy-Wp-oHc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="30"/>
+                                <state key="normal" title="View My Lists">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MeT-8W-1n6" kind="push" id="uxy-rp-R8k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCX-zi-5Py">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="183" id="BG7-Y0-ldN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="List Manager.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yCX-zi-5Py" firstAttribute="leading" secondItem="jC2-J9-29T" secondAttribute="leading" type="default" id="ALv-X5-Sjj"/>
+                            <constraint firstItem="yCX-zi-5Py" firstAttribute="trailing" secondItem="jC2-J9-29T" secondAttribute="trailing" type="default" id="CjY-tY-ob6"/>
+                            <constraint firstItem="yCX-zi-5Py" firstAttribute="top" secondItem="jC2-J9-29T" secondAttribute="top" constant="30" id="NIV-4O-Eek"/>
+                            <constraint firstAttribute="trailing" secondItem="4op-K5-9uz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="a2X-gU-Vhx"/>
+                            <constraint firstItem="4op-K5-9uz" firstAttribute="leading" secondItem="jC2-J9-29T" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="k1O-Sq-I5R"/>
+                            <constraint firstAttribute="bottom" secondItem="4op-K5-9uz" secondAttribute="bottom" constant="71" id="sMY-4N-Hot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rjW-uS-pQP"/>
+                    <connections>
+                        <outlet property="myListsButton" destination="4op-K5-9uz" id="Xcy-u8-J7P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rU-JK-ubl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1313" y="166"/>
+        </scene>
         <!--My Lists - My Lists-->
         <scene sceneID="bKZ-21-518">
             <objects>
@@ -12,6 +69,13 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableFooterView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Drag Down to Update Imported Lists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CHb-FI-f8h">
+                            <rect key="frame" x="0.0" y="66" width="320" height="38"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyListsCell" id="roe-aa-S2w" customClass="MyListsCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -51,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQg-ID-9lv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="155"/>
+            <point key="canvasLocation" x="1896" y="155"/>
         </scene>
         <!--List-->
         <scene sceneID="zXJ-83-Ah8">
@@ -100,7 +164,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w8H-bX-asQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="155"/>
+            <point key="canvasLocation" x="2346" y="155"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="sMB-qq-ART">
@@ -220,71 +284,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRC-MX-QSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2229" y="155"/>
+            <point key="canvasLocation" x="2755" y="155"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="jMu-SC-7n7">
+        <scene sceneID="ahO-kK-UbW">
             <objects>
-                <navigationController id="v8X-8a-zmf" sceneMemberID="viewController">
+                <navigationController id="gxP-du-3oc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="0oi-NX-fQi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ec5-Y3-LPg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pdd-wM-BdW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="MeT-8W-1n6" kind="relationship" relationship="rootViewController" id="FIQ-Y8-77r"/>
+                        <segue destination="iQ1-3R-mL1" kind="relationship" relationship="rootViewController" id="1ai-nx-zHU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pDx-Pw-moP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlK-PM-YR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="155"/>
+            <point key="canvasLocation" x="787" y="166"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="Item" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/Item.h"/>
-        </class>
-        <class className="ItemViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ItemViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backgroundTouched:"/>
-                <relationship kind="action" name="getPhoto:"/>
-                <relationship kind="action" name="textFieldReturn:"/>
-                <relationship kind="outlet" name="choosePhotoBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="currentItem" candidateClass="Item"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="takePhotoBtn" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="textDetails" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="List" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/List.h"/>
-            <relationships>
-                <relationship kind="action" name="exportMethod:"/>
-            </relationships>
-        </class>
-        <class className="ListCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="itemName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MyLists" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyLists.h"/>
-        </class>
-        <class className="MyListsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyListsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
+    <resources>
+        <image name="List Manager.png" width="497" height="271"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

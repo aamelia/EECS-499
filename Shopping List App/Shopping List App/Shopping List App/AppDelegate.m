@@ -22,12 +22,16 @@
     NSMutableArray *loadedLists = [ListDatabase loadListDocs];
     allLists = loadedLists;
     
-    //MyLists *rootController = (MyLists *) [navigationController.viewControllers objectAtIndex:0];
+    Welcome *rootController = (Welcome *) [navigationController.viewControllers objectAtIndex:0];
+    
+    // Add the navigation controller's view to the window and display.
+    [window addSubview:navigationController.view];
+    [window makeKeyAndVisible];
     
     NSURL *url = (NSURL *)[launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
     if (url != nil && [url isFileURL])
     {
-        [self handleOpenURL:url];
+        //[self handleOpenURL:url];
     }
     return YES;
 
@@ -35,19 +39,26 @@
 
 -(BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
+    /*
+    Welcome *rootController = (Welcome *) [navigationController.viewControllers objectAtIndex:0];
+
+    if(rootController == nil)
+        NSLog(@"Nil");
+    if (url != nil && [url isFileURL])
+    {
+        NSLog(@"passing to rootController");
+        [rootController passToMyLists:url];
+    }
+    return YES;
+    */
+    
     ListDoc *newDoc = [[ListDoc alloc] init];
     if ([newDoc importFromURL:url])
     {
-        ListDoc *newDoc = [[ListDoc alloc] init];
-        if ([newDoc importFromURL:url])
-        {
-            [allLists addObject:newDoc];
-        }
-        
-        //MyLists *myLists = [[MyLists alloc] init];
-        //[myLists handleOpenURL:url];
+        [allLists addObject:newDoc];
     }
     return YES;
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

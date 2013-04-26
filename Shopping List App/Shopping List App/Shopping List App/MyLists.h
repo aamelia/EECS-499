@@ -20,9 +20,12 @@
     NSString *currentlyAdding;
 }
 
+@property (weak, nonatomic) IBOutlet UIButton *update;
 @property (nonatomic, strong) NSString *currentlyAdding;
 @property (nonatomic, assign) BOOL *newItemToAdd;
+@property (assign, nonatomic) BOOL ascending;
 
 - (void)handleOpenURL:(NSURL *)url;
+- (IBAction)updateList;
 
 @end

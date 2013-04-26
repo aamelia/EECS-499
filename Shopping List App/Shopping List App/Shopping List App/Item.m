@@ -23,12 +23,13 @@
     return (self);
 }
 
-- (id)initWithName:(NSString*)nName details:(NSString*)nDetails
+- (id)initWithName:(NSString*)nName details:(NSString*)nDetails image:(UIImage*)nImage
 {
     if ((self = [super init]))
     {
         name = nName;
         details = nDetails;
+        image = nImage;
     }
     return self;
 }
@@ -36,19 +37,21 @@
 
 #define knameKey        @"Name"
 #define kdetailsKey     @"Details"
+#define kimageKey       @"Image"
 
 - (void) encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:name forKey:knameKey];
     [encoder encodeObject:details forKey:kdetailsKey];
-    
+    [encoder encodeObject:image forKey:kimageKey];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
     NSString *name = [decoder decodeObjectForKey:knameKey];
     NSString *details = [decoder decodeObjectForKey:kdetailsKey];
-    return [self initWithName:name details:details];
+    UIImage *image = [decoder decodeObjectForKey:kimageKey];
+    return [self initWithName:name details:details image:image];
 }
 
 

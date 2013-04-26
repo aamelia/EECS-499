@@ -38,6 +38,7 @@
 		A5CB25311721D2C900A720A5 /* ListDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB25301721D2C900A720A5 /* ListDatabase.m */; };
 		A5CB2540172A2D8200A720A5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5CB253F172A2D8100A720A5 /* MessageUI.framework */; };
 		A5CB2543172A2E1D00A720A5 /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CB2542172A2E1D00A720A5 /* DSActivityView.m */; };
+		A5CB2545172A909000A720A5 /* List Manager.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CB2544172A908F00A720A5 /* List Manager.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		A5CB253F172A2D8100A720A5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A5CB2541172A2E1D00A720A5 /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		A5CB2542172A2E1D00A720A5 /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		A5CB2544172A908F00A720A5 /* List Manager.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "List Manager.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				A5CB2528171EF3B200A720A5 /* Model */,
-				A56D1DAD16E7ED01008B3C9D /* Implementation Files */,
 				A56D1DAB16E7ECE6008B3C9D /* Header Files */,
+				A56D1DAD16E7ED01008B3C9D /* Implementation Files */,
 				A56D1D7016E7EAC6008B3C9D /* AppDelegate.h */,
 				A56D1D7116E7EAC6008B3C9D /* AppDelegate.m */,
 				A56D1D7916E7EAC6008B3C9D /* MainStoryboard.storyboard */,
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				A56D1D6916E7EAC6008B3C9D /* Shopping List App-Info.plist */,
+				A5CB2544172A908F00A720A5 /* List Manager.png */,
 				A536169117132FC600FE03E5 /* d41d8cd98f00b204e9800998ecf8427e.png */,
 				A5B426DF171B29A2003D87B9 /* NSData+CocoaDevUsersAdditions.m */,
 				A5B426E0171B29A2003D87B9 /* NSData+CocoaDevUsersAdditions.h */,
@@ -332,6 +335,7 @@
 				A56D1D7816E7EAC6008B3C9D /* Default-568h@2x.png in Resources */,
 				A56D1D7B16E7EAC6008B3C9D /* MainStoryboard.storyboard in Resources */,
 				A536169217132FC600FE03E5 /* d41d8cd98f00b204e9800998ecf8427e.png in Resources */,
+				A5CB2545172A909000A720A5 /* List Manager.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
