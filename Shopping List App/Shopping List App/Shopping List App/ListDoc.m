@@ -7,48 +7,43 @@
 #define kDataFile       @"data.plist"
 
 @implementation ListDoc
-@synthesize data;
-@synthesize docPath;
+@synthesize data = _data;
+@synthesize docPath = _docPath;
 
 - (id)init {
-    if ((self = [super init])) {
+    if ((self = [super init]))
+    {
+        NSLog(@"In this init function");
+        _data = [[ListData alloc] init];
     }
-    data = [[ListData alloc] init];
-
     return self;
 }
 
 - (id)initWithDocPath:(NSString *)docPath {
     if ((self = [super init])) {
-        docPath = [docPath copy];
+        _docPath = [docPath copy];
     }
     return self;
 }
 
-- (id)initWithTitle:(NSString*)title list:(NSMutableArray*)list
+- (id)initWithTitle:(NSString*)title items:(NSMutableArray*)items
 {
-    if ((self = [super init])) {
-        data = [[ListData alloc] init];
-        data.title = title;
-        data.list = list;
+    if ((self = [super init]))
+    {
+        _data = [[ListData alloc] initWithTitle:title items:items];
     }
     return self;
-}
-
-- (void)dealloc
-{
-    data = nil;
-    docPath = nil;
 }
 
 - (BOOL)createDataPath {
     
-    if (docPath == nil) {
+    if (_docPath == nil)
+    {
         self.docPath = [ListDatabase nextListDocPath];
     }
     
     NSError *error;
-    BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:docPath withIntermediateDirectories:YES attributes:nil error:&error];
+    BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:_docPath withIntermediateDirectories:YES attributes:nil error:&error];
     if (!success) {
         NSLog(@"Error creating data path: %@", [error localizedDescription]);
     }
@@ -58,40 +53,40 @@
 
 - (ListData *)data
 {
+    if (_data != nil) return _data;
     
-    if (data != nil) return data;
-    
-    NSString *dataPath = [docPath stringByAppendingPathComponent:kDataFile];
+    NSString *dataPath = [_docPath stringByAppendingPathComponent:kDataFile];
     NSData *codedData = [[NSData alloc] initWithContentsOfFile:dataPath];
     if (codedData == nil) return nil;
     
     NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:codedData];
-    data = [unarchiver decodeObjectForKey:kDataKey];
-    [unarchiver finishDecoding];    
-    return data;
+    _data = [unarchiver decodeObjectForKey:kDataKey];
+    [unarchiver finishDecoding];
+    
+    return _data;
+    
 }
 
 - (void)saveData
-{
-    
-    if (data == nil) return;
-    
+{    
+    if (_data == nil)
+        return;
     [self createDataPath];
     
-    NSString *dataPath = [docPath stringByAppendingPathComponent:kDataFile];
-    NSMutableData *localData = [[NSMutableData alloc] init];
-    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:localData];
-    [archiver encodeObject:data forKey:kDataKey];
+    NSString *dataPath = [_docPath stringByAppendingPathComponent:kDataFile];
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    [archiver encodeObject:_data forKey:kDataKey];
     [archiver finishEncoding];
-    [localData writeToFile:dataPath atomically:YES];
-    NSLog(@"save DataPath = %@", dataPath);
-    NSLog(@"data.title = %@", data.title);
+    [data writeToFile:dataPath atomically:YES];
+    //NSLog(@"save DataPath = %@", dataPath);
+    
 }
 
-- (void)deleteDoc {
-    
+- (void)deleteDoc
+{
     NSError *error;
-    BOOL success = [[NSFileManager defaultManager] removeItemAtPath:docPath error:&error];
+    BOOL success = [[NSFileManager defaultManager] removeItemAtPath:_docPath error:&error];
     if (!success)
     {
         NSLog(@"Error removing document path: %@", error.localizedDescription);
@@ -99,17 +94,20 @@
     
 }
 
-- (NSString *)getExportFileName {
-    NSString *fileName = data.title;
+- (NSString *)getExportFileName
+{
+    NSString *fileName = _data.title;
     NSString *zippedName = [fileName stringByAppendingString:@".sbz"];
     return zippedName;
 }
 
-- (NSData *)exportToNSData {
+- (NSData *)exportToNSData
+{
     NSError *error;
-    NSURL *url = [NSURL fileURLWithPath:docPath];
+    NSURL *url = [NSURL fileURLWithPath:_docPath];
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initWithURL:url options:0 error:&error];
-    if (dirWrapper == nil) {
+    if (dirWrapper == nil)
+    {
         NSLog(@"Error creating directory wrapper: %@", error.localizedDescription);
         return nil;
     }
@@ -119,8 +117,8 @@
     return gzData;
 }
 
-- (BOOL)exportToDiskWithForce:(BOOL)force {
-    
+- (BOOL)exportToDiskWithForce:(BOOL)force
+{    
     [self createDataPath];
     
     // Figure out destination name (in public docs dir)
@@ -130,7 +128,8 @@
     NSString *zippedPath = [documentsDirectory stringByAppendingPathComponent:zippedName];
     
     // Check if file already exists (unless we force the write)
-    if (!force && [[NSFileManager defaultManager] fileExistsAtPath:zippedPath]) {
+    if (!force && [[NSFileManager defaultManager] fileExistsAtPath:zippedPath])
+    {
         return FALSE;
     }
     
@@ -149,7 +148,8 @@
     // Read data into a dir Wrapper
     NSData *unzippedData = [zippedData gzipInflate];
     NSFileWrapper *dirWrapper = [[NSFileWrapper alloc] initWithSerializedRepresentation:unzippedData];
-    if (dirWrapper == nil) {
+    if (dirWrapper == nil)
+    {
         NSLog(@"Error creating dir wrapper from unzipped data");
         return FALSE;
     }
@@ -159,7 +159,8 @@
     NSURL *dirUrl = [NSURL fileURLWithPath:dirPath];
     NSError *error;
     BOOL success = [dirWrapper writeToURL:dirUrl options:NSFileWrapperWritingAtomic originalContentsURL:nil error:&error];
-    if (!success) {
+    if (!success)
+    {
         NSLog(@"Error importing file: %@", error.localizedDescription);
         return FALSE;
     }
@@ -170,20 +171,18 @@
     
 }
 
-- (BOOL)importFromPath:(NSString *)importPath {
-    
+- (BOOL)importFromPath:(NSString *)importPath
+{
     // Read data into a dir Wrapper
     NSData *zippedData = [NSData dataWithContentsOfFile:importPath];
     return [self importData:zippedData];
-    
 }
 
-- (BOOL)importFromURL:(NSURL *)importURL {
-    
+- (BOOL)importFromURL:(NSURL *)importURL
+{
     // Read data into a dir Wrapper
     NSData *zippedData = [NSData dataWithContentsOfURL:importURL];
     return [self importData:zippedData];
-    
 }
 
 @end

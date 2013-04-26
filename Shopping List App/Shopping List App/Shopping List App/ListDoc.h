@@ -1,22 +1,20 @@
 #import <Foundation/Foundation.h>
-#import "Item.h"
 
 @class ListData;
 
-@interface ListDoc : NSObject <NSCoding> 
+@interface ListDoc : NSObject
 {
-        ListData *data;
-        NSString *docPath;
+    ListData *_data;
+    NSString *_docPath;
 }
 
-@property (nonatomic, strong) ListData *data;
+@property (nonatomic, retain) ListData *data;
 @property (copy) NSString *docPath;
 
 - (id)init;
 - (id)initWithDocPath:(NSString *)docPath;
-- (id)initWithTitle:(NSString*)title list:(NSMutableArray*)list;
+- (id)initWithTitle:(NSString*)title items:(NSMutableArray*)items;
 - (void)saveData;
-- (void)saveImages;
 - (void)deleteDoc;
 - (NSString *)getExportFileName;
 - (NSData *)exportToNSData;

@@ -1,9 +1,7 @@
-
-
 #import <Foundation/Foundation.h>
 
-@interface ListDatabase : NSObject {
-    
+@interface ListDatabase : NSObject
+{    
 }
 
 + (NSMutableArray *)loadListDocs;

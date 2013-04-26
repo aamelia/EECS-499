@@ -14,33 +14,25 @@
 @implementation AppDelegate
 
 @synthesize window;
-//@synthesize navigationController;
-
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    allLists = [[NSMutableArray alloc] init];
     NSMutableArray *loadedLists = [ListDatabase loadListDocs];
-    NSLog(@"The size of loadedLists is: %i", loadedLists.count);
+    //NSLog(@"The size of loadedLists is: %i", loadedLists.count);
     allLists = loadedLists;
     
     if(allLists.count >0)
     {
-        //NSString *temp = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[0]).data).list)[0]).name;
-        ListData *data = ((ListDoc*)allLists[0]).data;
-        NSString *temp2 = ((ListDoc*)allLists[0]).docPath;
-        NSLog(@"allLists[0].docPath = %@", temp2);
+        //NSString *temp = ((ListData*)((ListDoc*)allLists[0]).data).title;
+        //ListData *data = ((ListDoc*)allLists[0]).data;
+        //NSString *temp2 = ((ListDoc*)allLists[0]).docPath;
+        //NSLog(@"allLists[0].docPath = %@", temp2);
         //NSLog(@"The title of the first list is: %@", temp);
     }
-    
-    //NSURL *url = (NSURL *)[launchOptions valueForKey:UIApplicationLaunchOptionsURLKey];
-    //if (url != nil && [url isFileURL]) {
-    //    [rootController handleOpenURL:url];
-    //}
-    
     return YES;
 }
 

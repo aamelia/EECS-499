@@ -12,15 +12,14 @@
 @end
 
 @implementation List
+@synthesize listDoc = _listDoc;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-    }
-    NSLog(@"The title is: %@", listDoc.data.title);
-    
+    }    
     return self;
 }
 
@@ -41,11 +40,18 @@
     {
         Item *newItem = [[Item alloc] init];
         newItem.name = [[alertView textFieldAtIndex:0] text];
+        NSLog(@"Made it to here");
         
         //Add the item to allLists
-        //[((NSMutableArray *)((ShoppingList *)allLists[currentListIndex]).listItems) addObject: newItem];
-        [((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list) addObject:newItem];
+        NSLog(@"currentListIndex = %i", currentListIndex);
+
+        int counter;
+        counter = ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items).count;
+        NSLog(@"Counter = %i", counter);
         
+        [((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items) addObject:newItem];
+        NSLog(@"Made it to here");
+
         [self.tableView reloadData];
     }
 }
@@ -93,7 +99,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list).count;
+    return ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items).count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,7 +109,7 @@
     
     //Configure the cell
     int row = [indexPath row];
-    Item *temp = ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[row];
+    Item *temp = ((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[row];
         
     cell.itemName.text = temp.name;
     

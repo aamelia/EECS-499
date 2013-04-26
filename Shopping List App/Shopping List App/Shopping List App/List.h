@@ -21,7 +21,7 @@
 
 @interface List : UITableViewController
 {
-    ListDoc *listDoc;
+    ListDoc *_listDoc;
 }
 
 @property (nonatomic, retain) ListDoc *listDoc;

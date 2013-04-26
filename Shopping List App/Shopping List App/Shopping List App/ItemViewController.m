@@ -26,9 +26,9 @@
 - (void) viewDidDisappear:(BOOL)animated
 {
     //Save Details
-    ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).details = textDetails.text;
+    ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).details = textDetails.text;
     
-    ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).image = imageView.image;
+    ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).image = imageView.image;
     
     //Save Image
     //((Item *)((ShoppingList *)allLists[currentListIndex]).listItems[currentItemIndex]).image = imageView.image;
@@ -37,8 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    imageView.image = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).image;
-    textDetails.text = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).list)[currentItemIndex]).details;
+    imageView.image = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).image;
+    textDetails.text = ((Item*)((NSMutableArray*)((ListData*)((ListDoc*)allLists[currentListIndex]).data).items)[currentItemIndex]).details;
 
     
     textDetails.layer.borderWidth = 2.0f;

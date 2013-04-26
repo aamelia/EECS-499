@@ -1,15 +1,15 @@
+
 #import <Foundation/Foundation.h>
 
-@interface ListData : NSObject <NSCoding>
-{
-    NSString *title;
-    NSMutableArray *list;
+@interface ListData : NSObject <NSCoding> {
+    NSString *_title;
+    NSMutableArray *_items;
 }
 
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSMutableArray *items;
 
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSMutableArray *list;
-
-- (id)initWithTitle:(NSString*)title list:(NSMutableArray*)list;
+- (id)init;
+- (id)initWithTitle:(NSString*)title items:(NSMutableArray*)items;
 
 @end

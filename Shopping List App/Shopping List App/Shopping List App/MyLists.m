@@ -15,12 +15,12 @@
 
 @implementation MyLists
 @synthesize currentlyAdding;
-//@synthesize allLists;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
     }
     return self;
@@ -41,9 +41,11 @@
 {
     if (buttonIndex == 1)
     {
+        //ListDoc *newDoc = [[ListDoc alloc] initWithTitle:[[alertView textFieldAtIndex:0] text] items:[[NSMutableArray alloc]init]];
         ListDoc *newDoc = [[ListDoc alloc] init];
         newDoc.data.title = [[alertView textFieldAtIndex:0] text];
-        newDoc.data.list = [[NSMutableArray alloc] init];
+        newDoc.data.items = [[NSMutableArray alloc] init];
+        
         [allLists addObject: newDoc];
         [newDoc saveData];
         
@@ -54,13 +56,20 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    //This method is called each time you see this view on the screen
+    
+    //should save each list each time you visit the home screen
+    for(int i=0; i<allLists.count; i++)
+    {
+        ListDoc *doc = [allLists objectAtIndex:i];
+        //[doc saveData];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.navigationItem.title = @"My Lists";
-    allLists = [[NSMutableArray alloc] init];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action: @selector(showMessage)];
     self.navigationItem.rightBarButtonItem = rightButton;
@@ -94,6 +103,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    //NSLog(@"The number of rows is: %i", allLists.count);
     return allLists.count;
 }
 
